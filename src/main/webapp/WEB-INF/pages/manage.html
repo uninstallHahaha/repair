@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>管理台</title>
+    <script src="js/jq/jquery-3.4.1.js"></script>
+    <!--bootstrap-->
+    <link href="js/bootstrap/bootstrap.css" rel="stylesheet">
+    <script src="js/bootstrap/bootstrap.js"></script>
+    <script src="layer/layer.js"></script>
+    <script src="js/vue/vue.js"></script>
+
+    <link rel="icon" href="images/buser.ico" type="image/x-icon"/>
+
+    <script src="js/index.js"></script>
+    <script src="js/pCenter.js"></script>
+    <link href="css/index.css" rel="stylesheet">
+    <link href="/css/scroll.css" rel="stylesheet">
+    <link href="/css/pCenter.css" rel="stylesheet">
+    <link href="/css/manage.css" rel="stylesheet">
+
+    <script src="js/manage.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <nav class="navbar navbar-default" role="navigation" style="margin: 0px;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1"><span
+                                class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a class="navbar-brand" href="/index.jsp">Buser</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/index.jsp">地图</a>
+                            </li>
+                            <li>
+                                <a href="getNewsPage">新闻</a>
+                            </li>
+                            <li v-on:click="switchPage">
+                                <a href="#">发布</a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#" id="showEw" onclick="showEw()">
+                                    <svg class="Zi Zi--Share Button-zi" fill="currentColor" viewBox="0 0 24 24"
+                                         width="1.2em" height="1.2em">
+                                        <path d="M2.931 7.89c-1.067.24-1.275 1.669-.318 2.207l5.277 2.908 8.168-4.776c.25-.127.477.198.273.39L9.05 14.66l.927 5.953c.18 1.084 1.593 1.376 2.182.456l9.644-15.242c.584-.892-.212-2.029-1.234-1.796L2.93 7.89z"
+                                              fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="pages/pCenter.jsp" class="dropdown-toggle" data-toggle="dropdown">
+                                    <img class="avImg" id="avImg"
+                                         :src="userData.av" alt="">
+                                    我的
+                                    <strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a id="pCenter" href="toPCenter">个人中心</a>
+                                    </li>
+                                    <li class="divider">
+                                    </li>
+                                    <li>
+                                        <a href="#" id="logoutBtn" onclick="pCenterlogoutBtn()">退出登录</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <div class="row clearfix" style="    display: flex;justify-content : center;">
+                    <div class="col-md-12 column" style="width: 75%;;">
+
+
+                        <div v-show="ifmain" class="col-md-12 column">
+                            <div class="row clearfix main">
+
+                                <div class="col-md-4 column">
+                                    <div class="panel panel-default pPanel">
+                                        <img title="点击切换头像" id="bigAV" onclick="changeAV()"
+                                             alt="140x140" v-bind:src="userData.av" class="img-circle"/>
+                                        <div class="nick">{{ userData.account }}(管理员)</div>
+                                        <button type="button" class="btn btn-default centerBtn">个人中心</button>
+                                        <ul class="list-unstyled funUl">
+                                            <li class="funLi" @click="bindEmail">
+                                                绑定邮箱
+                                            </li>
+                                            <li class="funLi" id="changePass" onclick="changePass()">
+                                                修改密码
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-8 column">
+                                    <div class="panel panel-default zanPanel">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">新闻管理</h3>
+                                        </div>
+                                        <div class="panel-body myFavList">
+                                            <ul class="list-group newslist">
+
+                                                <div v-if="newsList.length==0" class="noConter">
+                                                    <div class="noCommentDivzan"></div>
+                                                    <div class="noCommentTip">暂无新闻</div>
+                                                </div>
+
+                                                <li v-for="n of newsList" :key="n.id" class="list-group-item">
+                                                    <a class="zanTitle" :href="'getNewsDetail?newsId='+n.id">
+                                                        {{n.title}}</a>
+                                                    <span class="zanTime">发布时间: {{ n.createtime | dataFormat('yyyy-MM-dd hh:mm:ss') }}</span>
+                                                    <a href="#" @click="delNews(n.id,n.title)" class="outBtn">删除</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default zanPanel">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">用户管理</h3>
+                                        </div>
+                                        <div class="panel-body myFavList">
+                                            <ul class="list-group newslist userManage">
+                                                <div v-if="usersList.length==0" class="noConter">
+                                                    <div class="noCommentDiv"></div>
+                                                    <div class="noCommentTip">暂无用户</div>
+                                                </div>
+                                                <li v-for="u of usersList" :key="u.id" class="list-group-item">
+                                                    <div>
+                                                        <div class="userImgOut">
+                                                            <img class="avImg userListImg"
+                                                                 :src="u.av" alt="">
+                                                        </div>
+                                                        <div class="userOutDiv">
+                                                        <span class="userDescDiv">
+                                                        <a href="#" class="userListName">
+                                                            {{u.account}}
+                                                        </a>
+                                                        <a href="#" class="userListEmail">
+                                                            {{u.email=="null@null.com"?"该用户未绑定邮箱":u.email}}
+                                                        </a>
+                                                        </span>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#" @click="outUser(u.id,u.account)" class="outBtn">注销</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div v-show="!ifmain" class="col-md-12 column">
+                            <div class="row clearfix main">
+                                <div class="col-md-12 column">
+                                    <div>
+                                        <button class="btn btn-default noDe"
+                                                @click="returnMain">
+                                            <返回管理台
+                                        </button>
+                                        <button class="btn btn-default noDe"
+                                                @click="sendArticle">
+                                            发布新闻
+                                        </button>
+                                        <button class="btn btn-default noDe"
+                                                @click="showScrs">
+                                            草稿箱
+                                        </button>
+                                        <button class="btn btn-default noDe"
+                                                @click="saveArticle">
+                                            保存为草稿>
+                                        </button>
+                                    </div>
+
+                                    <div class="panel panel-default pPanelSendArticle">
+                                        <form role="form" class="articleForm">
+                                            <div class="form-group">
+                                            <textarea class="form-control articleTile" rows="1"
+                                                      id="articleTile"
+                                                      placeholder="标题" v-model="article.title">
+                                            </textarea>
+                                            </div>
+                                            <div class="form-group articleBody"
+                                                 id="articleBody"
+                                                 contenteditable="true"
+                                            >
+                                                {{article.body}}
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="coverCopyRight">@ 2020 Aaidu.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
