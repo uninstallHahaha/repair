@@ -25,15 +25,13 @@ public class Record {
 
     private String whereRepair;
 
-    private String desc;
+    private String detail;
 
     private String pic;
 
     private Integer payState;
 
     private Integer payPrice;
-
-    private String comment;
 
     public String getId() {
         return id;
@@ -123,12 +121,12 @@ public class Record {
         this.whereRepair = whereRepair == null ? null : whereRepair.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setDetail(String detail) {
+        this.detail = detail == null ? null : detail.trim();
     }
 
     public String getPic() {
@@ -153,13 +151,5 @@ public class Record {
 
     public void setPayPrice(Integer payPrice) {
         this.payPrice = payPrice;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment == null ? null : comment.trim();
     }
 }

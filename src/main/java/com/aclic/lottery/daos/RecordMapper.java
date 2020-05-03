@@ -27,4 +27,6 @@ public interface RecordMapper {
     int updateByPrimaryKeySelective(Record record);
 
     int updateByPrimaryKey(Record record);
+
+    int modPayState(String rid);
 }
