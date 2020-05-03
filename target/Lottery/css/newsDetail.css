@@ -1,0 +1,286 @@
+body,
+html,
+#container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	font-family: "微软雅黑";
+}
+
+.container {
+	width: 100% !important;
+	padding: 0px;
+}
+
+.searchDiv {
+	position: absolute;
+	/* margin-top: 10px; */
+	margin-left: 10px;
+	top: 10px;
+	height: 50px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+
+.inputDiv {
+	flex-grow: 0;
+}
+.searchBtn {
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+	flex-grow: 0;
+	cursor: pointer;
+	background: cornflowerblue;
+	border-radius: 2px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*兴趣点搜索div*/
+.searchInput {
+	position: relative;
+	margin-top: 10px;
+	margin-left: 10px;
+	top: -100%;
+	height: 50px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+/*兴趣点搜索input*/
+.poiInput {}
+
+/*兴趣点搜索btn*/
+.poiBtn {
+	width: 50px;
+	height: 50px;
+	margin-left: 5px;
+	flex-grow: 0;
+	cursor: pointer;
+	background: cornflowerblue;
+	border-radius: 2px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.poiBtn>a {
+	font-size: medium;
+	font: "微软雅黑";
+	color: #fff;
+	text-decoration: none;
+}
+.searchBtn>a {
+	font-size: medium;
+	font: "微软雅黑";
+	color: #fff;
+	text-decoration: none;
+}
+.coverCopyRight {
+	width: 100%;
+	height: 30px;
+	background: #f8f8f8;
+	border: 1px solid #e7e7e7;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font: arial;
+	font-size: small;
+	font-weight: lighter;
+	color: #333;
+	cursor: default;
+}
+.newslist>li {
+	border: 0px;
+	border-bottom: 1px solid #ddd;
+	margin: 2px 0px;
+}
+.main {
+	padding: 10px 0px;
+}
+.newslistDiv {
+	overflow: auto;
+	height: calc(100vh - 100px);
+}
+.newsCon{
+	height: calc(100vh - 100px - 60px);
+	
+}
+.newsTitle {
+	font-weight: lighter;
+}
+.newsDesc {
+	display: block;
+}
+
+.headFrom{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.noDe{
+	border: 0px;
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+.noDe:hover {
+	text-decoration: none;
+}
+.noDe:focus{
+	color: #333;
+	border-color: #8c8c8c;
+	border: 0px !important;
+}
+
+.zandiv{
+	/*position: relative;*/
+	display: inline-block;
+	background: #f8f8f8;
+	/*padding: 6px;*/
+	border-radius: 3px;
+	border: 1px solid #e7e7e7;
+	margin: 6px 0px;
+	font-size: smaller;
+	cursor: pointer;
+}
+	
+.commentList{
+	    height: calc(100vh - 100px - 38px);
+    overflow-y: auto;
+}
+
+.addComBtn{
+	display: inline-block;
+	cursor: pointer;
+	font-weight: 100;
+}
+.comheading{
+	display: flex;
+    justify-content: space-between;
+}
+
+.newsTitle{
+	font-weight: lighter;
+	font-size: x-large;
+	text-decoration: none;
+	padding: 6px 0px;
+}
+
+.newsTime{
+	display: block;
+	font-size: 16px;
+	color: #888;
+	padding: 6px 0px;
+}
+
+.newsDesc{
+	line-height: 2;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+/*头像*/
+.commentAv{
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin-right: 6px;
+	cursor: default;
+}
+
+/*评论*/
+.commentLI{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.comConer{
+	display: inline-block;
+	flex-grow: 1;
+	padding: 6px;
+}
+.comCon{
+	display: block;
+	font-size: 14px;
+	color: #777777;
+}
+.comTime{
+	display: block;
+	width: 100%;
+	text-align: end;
+	font-size: smaller;
+	color: #d6d6d6;
+}
+
+.comPanel{
+	height: calc(100vh - 104px);
+	display: flex;
+	flex-direction: column;
+}
+
+/*zan*/
+.zan{
+	padding: 6px;
+	background: #e5f2ff;
+	color: #0084ff;
+	font-weight: 100;
+	border-radius: 3px;
+	transition-duration: .3s;
+}
+.zaned{
+	padding: 6px;
+	background: #0084ff;
+	color: #fff;
+	font-weight: 100;
+	border-radius: 3px;
+	transition-duration: .3s;
+}
+
+/*暂无评论*/
+.noComment{
+	text-align: center;
+	color: #d6d5d5;
+}
+
+/*暂无评论*/
+.noConter{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.noCommentDiv{
+	width: 48px;
+	height: 48px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("/images/noComment.svg");
+}
+.noCommentTip{
+	font-size: 14px;
+	color: #8a8a8a;
+}
+.noCommentDivzan{
+	width: 48px;
+	height: 48px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("/images/noZan.svg");
+}
+
+h3{
+	text-align: center;
+}

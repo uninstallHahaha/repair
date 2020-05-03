@@ -6,11 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="buserà" />
         <module name="Lottery" />
+        <module name="repair" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Lottery" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
