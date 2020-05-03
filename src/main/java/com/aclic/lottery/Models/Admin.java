@@ -1,15 +1,15 @@
 package com.aclic.lottery.Models;
 
-public class User {
+public class Admin {
     private String id;
 
     private String name;
 
     private String pass;
 
-    private String pic;
+    private Integer department;
 
-    private String email;
+    private String pic;
 
     public String getId() {
         return id;
@@ -35,19 +35,19 @@ public class User {
         this.pass = pass == null ? null : pass.trim();
     }
 
+    public Integer getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Integer department) {
+        this.department = department;
+    }
+
     public String getPic() {
         return pic;
     }
 
     public void setPic(String pic) {
         this.pic = pic == null ? null : pic.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
     }
 }

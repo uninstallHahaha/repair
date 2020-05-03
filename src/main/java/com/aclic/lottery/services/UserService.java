@@ -1,24 +1,20 @@
 package com.aclic.lottery.services;
 
 import com.aclic.lottery.Models.User;
+import com.aclic.lottery.Models.UserExample;
+import com.aclic.lottery.daos.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
-public interface UserService {
-    public List<User> getUsers();
-    public User findOne(String account, String pass);
-    public int addUser(User u);
-    public int delUser(String id);
-    public int modUser(User u);
+@Service
+public class UserService {
 
-    public int signInUser(User user);
+    @Autowired
+    UserMapper userMapper;
 
-    public int activeEmail(User user);
-
-    public User findOneByName(String account);
-
-    public User findOneById(String id);
-
-
+    public List<User> findAll(){
+        return userMapper.selectByExample(new UserExample());
+    }
 }
