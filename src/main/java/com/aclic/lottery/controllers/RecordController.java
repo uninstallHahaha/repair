@@ -152,4 +152,13 @@ public class RecordController {
     public int getPayState(String id) {
         return recordService.findOne(id).getPayState();
     }
+
+
+    //查询 - 所有
+    @ResponseBody
+    @RequestMapping("/obtainRecords")
+    public List<Record> obtainRecords(String id) {
+        //TODO 用户模块需修改
+        return recordService.findAllByUserid("");
+    }
 }

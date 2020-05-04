@@ -1,9 +1,12 @@
 package com.aclic.lottery.services;
 
 import com.aclic.lottery.Models.Record;
+import com.aclic.lottery.Models.RecordExample;
 import com.aclic.lottery.daos.RecordMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class RecordService {
@@ -27,5 +30,9 @@ public class RecordService {
 
     public int modPayStateTo28(String id) {
         return recordMapper.updatePayStateTo28(id);
+    }
+
+    public List<Record> findAllByUserid(String s) {
+        return recordMapper.selectByExample(new RecordExample());
     }
 }
