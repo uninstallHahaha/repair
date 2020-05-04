@@ -306,7 +306,7 @@
 
                             </div>
                             <div class="card-body card_chart">
-                                <h2> ${payres==1?'支付成功':'支付失败'}</h2>
+                                <h2> ${payres}</h2>
                                 <a href="#">返回首页</a>
                                 <a href="#">报修记录</a>
                                 <p>

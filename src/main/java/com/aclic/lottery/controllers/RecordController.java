@@ -7,6 +7,7 @@ import com.aclic.lottery.services.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,10 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 public class RecordController {
@@ -58,17 +56,22 @@ public class RecordController {
 
         //记录入库
         int pay = 0;
-        if (type == 1) {
-            pay = 30;
-        }
-        if (type == 2) {
-            pay = 50;
-        }
-        if (type == 3) {
-            pay = 100;
+        switch (type) {
+            case 1:
+                pay = 30;
+                break;
+            case 2:
+                pay = 50;
+                break;
+            case 3:
+                pay = 100;
+                break;
+            default:
+                pay = 30;
+                break;
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-        Record record = new Record();
+        final Record record = new Record();
         record.setRtime(simpleDateFormat.parse(rtime));
         record.setCtime(new Date());
         record.setDetail(desc);
@@ -89,8 +92,20 @@ public class RecordController {
             model.addAttribute("r_state", 0);
         }
 
+        //支付倒计时
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Record one = recordService.findOne(record.getId());
+                if (one.getPayState() != 1) {
+                    int res = recordService.modPayStateTo28(record.getId());
+                }
+            }
+        }, 1000 * 60 * 15);
+
         //生成二维码
-        String text = Utils.getIpAddress() +":8080/gettopaypage/"+record.getId();
+        String text = Utils.getIpAddress() + ":8080/gettopaypage/" + record.getId();
         // 嵌入二维码的图片路径
         String imgPath = "/assets/images/small-logo.png";
         // 生成的二维码的路径及名称
@@ -101,11 +116,14 @@ public class RecordController {
             mafile.mkdirs();
         }
         String maname = filename.split("\\.")[0] + "_ma.jpg";
-        String destPath = mapath +"/"+ maname;
+        String destPath = mapath + "/" + maname;
         QRCodeUtil.encode(text, imgPath, destPath, true);
 
         //返回二维码名称
-        model.addAttribute("mapath",maname);
+        model.addAttribute("mapath", maname);
+        //订单id
+        model.addAttribute("rid", record.getId());
+
 
         return "pay_page";
     }
@@ -113,13 +131,25 @@ public class RecordController {
 
     //修改 - 支付状态
     @RequestMapping("/checkpay")
-    public String checkpay(String rid , Model model){
-        int modres = recordService.modPayState(rid);
-        if(modres ==1){
-            model.addAttribute("payres",1);
+    public String checkpay(String rid, Model model) {
+        if (recordService.findOne(rid).getPayState() != 28) {
+            //未逾期
+            int modres = recordService.modPayState(rid);
+            if (modres == 1) {
+                model.addAttribute("payres", "支付成功");
+            } else {
+                model.addAttribute("payres", "支付失败");
+            }
         }else{
-            model.addAttribute("payres",0);
+            model.addAttribute("payres", "未在规定时间内支付, 订单已逾期");
         }
         return "pay_result";
+    }
+
+    //查询 - 支付状态
+    @ResponseBody
+    @RequestMapping("/getPayState")
+    public int getPayState(String id) {
+        return recordService.findOne(id).getPayState();
     }
 }

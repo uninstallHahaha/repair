@@ -20,4 +20,12 @@ public class RecordService {
 
         return recordMapper.modPayState(rid);
     }
+
+    public Record findOne(String id){
+        return recordMapper.selectByPrimaryKey(id);
+    }
+
+    public int modPayStateTo28(String id) {
+        return recordMapper.updatePayStateTo28(id);
+    }
 }

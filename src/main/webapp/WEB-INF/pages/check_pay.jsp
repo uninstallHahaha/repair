@@ -306,6 +306,8 @@
 
                             </div>
                             <div class="card-body card_chart">
+
+                                <h2>支付款项: ${price}元</h2>
                                 <form action="/checkpay" method="post">
                                     <input type="text" style="display: none;" name="rid" value="${rid}">
                                     <input type="submit" value="确认支付">

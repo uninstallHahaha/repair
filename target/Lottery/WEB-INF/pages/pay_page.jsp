@@ -306,8 +306,11 @@
 
                             </div>
                             <div class="card-body card_chart">
-                                <img src="/uploads/ma/${mapath}" width="200px" height="200px" alt="">
+                                <input type="text" value="${rid}" style="display: none;"
+                                       id="ridinput">
 
+                                <img src="/uploads/ma/${mapath}" width="200px" height="200px" alt="">
+                                <span id="timerc">15:00</span>
                                 <p>
                                     Using a single set of
                                     <code>
@@ -357,6 +360,11 @@
 <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="assets/js/custom.js" type="text/javascript"></script>
+
+
+<script src="/xgather/xlib/layer/layer.js"></script>
+<script src="/xgather/xjs/pay_page.js"></script>
+
 </body>
 
 </html>

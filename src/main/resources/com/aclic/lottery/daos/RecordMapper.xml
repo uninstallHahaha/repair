@@ -373,4 +373,13 @@
     set pay_state = 1
     where id = #{rid,jdbcType=VARCHAR}
   </update>
+
+
+  <update id="updatePayStateTo28" parameterType="com.aclic.lottery.Models.Record">
+    update record
+    set pay_state = 28
+    where id = #{rid,jdbcType=VARCHAR}
+  </update>
+
+
 </mapper>
