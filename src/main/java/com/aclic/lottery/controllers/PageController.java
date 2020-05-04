@@ -16,8 +16,12 @@ public class PageController {
     @RequestMapping("/gettopaypage/{rid}")//
     public String gettopaypage(@PathVariable String rid, Model model){
         model.addAttribute("rid",rid);
-        //支付款项
-        model.addAttribute("price",recordService.findOne(rid).getPayPrice());
+        if(rid != null){
+            //支付款项
+            model.addAttribute("price",recordService.findOne(rid).getPayPrice());
+        }else{
+            model.addAttribute("price",30);
+        }
         return "check_pay";
     }
 }

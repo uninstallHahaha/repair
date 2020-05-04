@@ -267,7 +267,7 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-md-6">
                             <div class="page-breadcrumb">
-                                <h1>Grid System</h1>
+                                <h1>扫码支付</h1>
                             </div>
                         </div>
                         <div class="col-md-6 justify-content-md-end d-md-flex">
@@ -275,11 +275,11 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">Home</a>
+                                        <a class="parent-item" href="index.html">提交申请</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                     <li class="active">
-                                        Grid System
+                                       扫码支付
                                     </li>
                                 </ol>
                             </div>
@@ -294,7 +294,7 @@
                         <div class="card lobicard-custom-icon">
                             <div class="card-header">
                                 <div class="card-title">
-                                    Stacked to horizontal
+                                    扫描二维码
                                     <div class="dropdown">
                                         <div class="tools">
                                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
@@ -305,25 +305,14 @@
                                 </div>
 
                             </div>
-                            <div class="card-body card_chart">
+                            <div class="card-body card_chart fdis">
                                 <input type="text" value="${rid}" style="display: none;"
                                        id="ridinput">
 
                                 <img src="/uploads/ma/${mapath}" width="200px" height="200px" alt="">
                                 <span id="timerc">15:00</span>
                                 <p>
-                                    Using a single set of
-                                    <code>
-                                        .col-md-*
-                                    </code> grid classes, you can create a basic grid system that starts out stacked on
-                                    mobile devices and
-                                    tablet devices (the extra small to small range) before becoming horizontal on
-                                    desktop (medium) devices. Place grid
-                                    columns within any
-                                    <code>
-                                        .row
-                                    </code>
-                                    .
+                                    请在规定时间内扫描二维码并按照指引操作进行支付,逾期将会失效
                                 </p>
 
                             </div>
@@ -336,6 +325,16 @@
     </main>
     <!--main contents end-->
 
+    <style type="text/css">
+        .fdis{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+
 </div>
 <!-- Content_right_End -->
 <!-- Footer -->
@@ -344,8 +343,8 @@
         <div class="col-md-12 text-center">
             <div class="copy_right">
                 <p>
-                    2018 © Dashboard Theme By
-                    <a href="http://www.bootstrapmb.com/">Poliset</a>
+                    2020 © Designed By
+                    <a href="http://www.bootstrapmb.com/">Aclic</a>
                 </p>
             </div>
             <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

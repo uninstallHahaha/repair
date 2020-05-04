@@ -1,9 +1,11 @@
 $(function () {
 
+    //倒计时
     let timer = setInterval(function () {
         if ($('#timerc').text() == "0:0") {
             clearInterval(timer)
             $('#timerc').text($('#timerc').text() + '已逾期')
+            $('#timerc').css('color',"red")
             return
         }
         var cur = $('#timerc').text()

@@ -267,7 +267,7 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-md-6">
                             <div class="page-breadcrumb">
-                                <h1>Grid System</h1>
+                                <h1>支付结果</h1>
                             </div>
                         </div>
                         <div class="col-md-6 justify-content-md-end d-md-flex">
@@ -275,11 +275,11 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">Home</a>
+                                        <a class="parent-item" href="index.html">提交申请</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                     <li class="active">
-                                        Grid System
+                                        支付结果
                                     </li>
                                 </ol>
                             </div>
@@ -294,7 +294,7 @@
                         <div class="card lobicard-custom-icon">
                             <div class="card-header">
                                 <div class="card-title">
-                                    Stacked to horizontal
+                                    详情
                                     <div class="dropdown">
                                         <div class="tools">
                                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
@@ -310,18 +310,6 @@
                                 <a href="#">返回首页</a>
                                 <a href="#">报修记录</a>
                                 <p>
-                                    Using a single set of
-                                    <code>
-                                        .col-md-*
-                                    </code> grid classes, you can create a basic grid system that starts out stacked on
-                                    mobile devices and
-                                    tablet devices (the extra small to small range) before becoming horizontal on
-                                    desktop (medium) devices. Place grid
-                                    columns within any
-                                    <code>
-                                        .row
-                                    </code>
-                                    .
                                 </p>
 
                             </div>

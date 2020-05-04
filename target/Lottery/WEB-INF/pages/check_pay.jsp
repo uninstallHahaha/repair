@@ -13,13 +13,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/ionicons.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,8 +28,8 @@
     <header class="main-header">
         <div class="container_header">
             <div class="logo d-flex align-items-center">
-                <a href="#"> <strong class="logo_icon"> <img src="assets/images/small-logo.png" alt=""> </strong> <span
-                        class="logo-default"> <img src="assets/images/logo2.png" alt=""> </span> </a>
+                <a href="#"> <strong class="logo_icon"> <img src="/assets/images/small-logo.png" alt=""> </strong> <span
+                        class="logo-default"> <img src="/assets/images/logo2.png" alt=""> </span> </a>
                 <div class="icon_menu full_menu">
                     <a href="#" class="menu-toggler sidebar-toggler"></a>
                 </div>
@@ -123,7 +123,7 @@
                                     <li>
                                         <ul class="dropdown-menu-list">
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -131,7 +131,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -139,7 +139,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -147,7 +147,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -155,7 +155,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -163,7 +163,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -179,7 +179,7 @@
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img
-                                        class="img-circle pro_pic" src="assets/images/about-1.jpg" alt=""> </a>
+                                        class="img-circle pro_pic" src="/assets/images/about-1.jpg" alt=""> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
                                         <a href="#"> <i class="icon-user"></i> Profile </a>
@@ -214,7 +214,7 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="/assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
@@ -267,7 +267,7 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-md-6">
                             <div class="page-breadcrumb">
-                                <h1>Grid System</h1>
+                                <h1>确认支付</h1>
                             </div>
                         </div>
                         <div class="col-md-6 justify-content-md-end d-md-flex">
@@ -275,11 +275,11 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">Home</a>
+                                        <a class="parent-item" href="index.html">提交申请</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                     <li class="active">
-                                        Grid System
+                                        确认支付
                                     </li>
                                 </ol>
                             </div>
@@ -294,7 +294,7 @@
                         <div class="card lobicard-custom-icon">
                             <div class="card-header">
                                 <div class="card-title">
-                                    Stacked to horizontal
+                                    点击支付按钮支付
                                     <div class="dropdown">
                                         <div class="tools">
                                             <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
@@ -314,18 +314,6 @@
                                 </form>
 
                                 <p>
-                                    Using a single set of
-                                    <code>
-                                        .col-md-*
-                                    </code> grid classes, you can create a basic grid system that starts out stacked on
-                                    mobile devices and
-                                    tablet devices (the extra small to small range) before becoming horizontal on
-                                    desktop (medium) devices. Place grid
-                                    columns within any
-                                    <code>
-                                        .row
-                                    </code>
-                                    .
                                 </p>
 
                             </div>
@@ -346,8 +334,8 @@
         <div class="col-md-12 text-center">
             <div class="copy_right">
                 <p>
-                    2018 © Dashboard Theme By
-                    <a href="http://www.bootstrapmb.com/">Poliset</a>
+                    2020 © Designed By
+                    <a href="http://www.bootstrapmb.com/">Aclic</a>
                 </p>
             </div>
             <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>
@@ -356,12 +344,12 @@
 </footer>
 <!-- Footer_End -->
 </div>
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="assets/js/custom.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/popper.min.js"></script>
+<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="/assets/js/custom.js" type="text/javascript"></script>
 </body>
 
 </html>
