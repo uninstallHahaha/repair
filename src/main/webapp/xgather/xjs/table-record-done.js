@@ -31,6 +31,13 @@ function operateFormatter_d(value, row, index) {
     ].join('')
 }
 function operateFormatter_c(value, row, index) {
+    if(row.payState == 28){
+        return  [
+            '<a class="ban" href="javascript:void(0)" title="该记录为逾期未支付而失效记录,无法使用评价功能">',
+            '<i class="fa fa-ban" aria-hidden="true"></i>',
+            '</a>',
+        ].join('')
+    }
     return [
         '<a class="comment" href="javascript:void(0)" title="评价">',
         '<i class="fa fa-commenting" aria-hidden="true"></i>',

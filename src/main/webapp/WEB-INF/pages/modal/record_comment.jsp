@@ -95,11 +95,11 @@
             method: 'post',
             success: function (res) {
                 if (res == 1) {
-                    parent.layer.msg('评论成功')
+                    parent.layer.msg('评价成功')
                     var index = parent.layer.getFrameIndex(window.name);
                     parent.layer.close(index);
                 } else {
-                    parent.layer.msg('评论失败')
+                    parent.layer.msg('评价失败')
                 }
             }
         })
