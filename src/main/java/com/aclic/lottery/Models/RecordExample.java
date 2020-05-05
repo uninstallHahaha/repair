@@ -445,6 +445,126 @@ public class RecordExample {
             return (Criteria) this;
         }
 
+        public Criteria andDtimeIsNull() {
+            addCriterion("dtime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeIsNotNull() {
+            addCriterion("dtime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeEqualTo(Date value) {
+            addCriterion("dtime =", value, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeNotEqualTo(Date value) {
+            addCriterion("dtime <>", value, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeGreaterThan(Date value) {
+            addCriterion("dtime >", value, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("dtime >=", value, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeLessThan(Date value) {
+            addCriterion("dtime <", value, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeLessThanOrEqualTo(Date value) {
+            addCriterion("dtime <=", value, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeIn(List<Date> values) {
+            addCriterion("dtime in", values, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeNotIn(List<Date> values) {
+            addCriterion("dtime not in", values, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeBetween(Date value1, Date value2) {
+            addCriterion("dtime between", value1, value2, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andDtimeNotBetween(Date value1, Date value2) {
+            addCriterion("dtime not between", value1, value2, "dtime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeIsNull() {
+            addCriterion("atime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeIsNotNull() {
+            addCriterion("atime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeEqualTo(Date value) {
+            addCriterion("atime =", value, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeNotEqualTo(Date value) {
+            addCriterion("atime <>", value, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeGreaterThan(Date value) {
+            addCriterion("atime >", value, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("atime >=", value, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeLessThan(Date value) {
+            addCriterion("atime <", value, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeLessThanOrEqualTo(Date value) {
+            addCriterion("atime <=", value, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeIn(List<Date> values) {
+            addCriterion("atime in", values, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeNotIn(List<Date> values) {
+            addCriterion("atime not in", values, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeBetween(Date value1, Date value2) {
+            addCriterion("atime between", value1, value2, "atime");
+            return (Criteria) this;
+        }
+
+        public Criteria andAtimeNotBetween(Date value1, Date value2) {
+            addCriterion("atime not between", value1, value2, "atime");
+            return (Criteria) this;
+        }
+
         public Criteria andUsernameIsNull() {
             addCriterion("username is null");
             return (Criteria) this;

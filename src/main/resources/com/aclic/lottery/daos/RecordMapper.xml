@@ -7,6 +7,8 @@
     <result column="dealuserid" jdbcType="VARCHAR" property="dealuserid" />
     <result column="assignuserid" jdbcType="VARCHAR" property="assignuserid" />
     <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
+    <result column="dtime" jdbcType="TIMESTAMP" property="dtime" />
+    <result column="atime" jdbcType="TIMESTAMP" property="atime" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="userphone" jdbcType="VARCHAR" property="userphone" />
     <result column="rtime" jdbcType="TIMESTAMP" property="rtime" />
@@ -77,11 +79,9 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, subuserid, dealuserid, assignuserid, ctime, username, userphone, rtime, state, 
-    type, where_repair, detail, pic, pay_state, pay_price
+    id, subuserid, dealuserid, assignuserid, ctime, dtime, atime, username, userphone, 
+    rtime, state, type, where_repair, detail, pic, pay_state, pay_price
   </sql>
-
-
   <select id="selectByExample" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -96,23 +96,6 @@
       order by ${orderByClause}
     </if>
   </select>
-
-
-  <select id="selectDoingByUserid" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
-    select
-    *
-    from record
-    where pay_state != 28 and state != 4
-  </select>
-
-  <select id="selectDoneByUserid" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
-    select
-    *
-    from record
-    where pay_state = 28 or state = 4
-  </select>
-
-
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -131,17 +114,17 @@
   </delete>
   <insert id="insert" parameterType="com.aclic.lottery.Models.Record">
     insert into record (id, subuserid, dealuserid, 
-      assignuserid, ctime, username, 
-      userphone, rtime, state, 
-      type, where_repair, detail, 
-      pic, pay_state, pay_price
-      )
+      assignuserid, ctime, dtime, 
+      atime, username, userphone, 
+      rtime, state, type, 
+      where_repair, detail, pic, 
+      pay_state, pay_price)
     values (#{id,jdbcType=VARCHAR}, #{subuserid,jdbcType=VARCHAR}, #{dealuserid,jdbcType=VARCHAR}, 
-      #{assignuserid,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, 
-      #{userphone,jdbcType=VARCHAR}, #{rtime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, 
-      #{type,jdbcType=INTEGER}, #{whereRepair,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
-      #{pic,jdbcType=VARCHAR}, #{payState,jdbcType=INTEGER}, #{payPrice,jdbcType=INTEGER}
-      )
+      #{assignuserid,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{dtime,jdbcType=TIMESTAMP}, 
+      #{atime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, #{userphone,jdbcType=VARCHAR}, 
+      #{rtime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{whereRepair,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, 
+      #{payState,jdbcType=INTEGER}, #{payPrice,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.aclic.lottery.Models.Record">
     insert into record
@@ -160,6 +143,12 @@
       </if>
       <if test="ctime != null">
         ctime,
+      </if>
+      <if test="dtime != null">
+        dtime,
+      </if>
+      <if test="atime != null">
+        atime,
       </if>
       <if test="username != null">
         username,
@@ -207,6 +196,12 @@
       </if>
       <if test="ctime != null">
         #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtime != null">
+        #{dtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="atime != null">
+        #{atime,jdbcType=TIMESTAMP},
       </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
@@ -264,6 +259,12 @@
       <if test="record.ctime != null">
         ctime = #{record.ctime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.dtime != null">
+        dtime = #{record.dtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.atime != null">
+        atime = #{record.atime,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.username != null">
         username = #{record.username,jdbcType=VARCHAR},
       </if>
@@ -306,6 +307,8 @@
       dealuserid = #{record.dealuserid,jdbcType=VARCHAR},
       assignuserid = #{record.assignuserid,jdbcType=VARCHAR},
       ctime = #{record.ctime,jdbcType=TIMESTAMP},
+      dtime = #{record.dtime,jdbcType=TIMESTAMP},
+      atime = #{record.atime,jdbcType=TIMESTAMP},
       username = #{record.username,jdbcType=VARCHAR},
       userphone = #{record.userphone,jdbcType=VARCHAR},
       rtime = #{record.rtime,jdbcType=TIMESTAMP},
@@ -334,6 +337,12 @@
       </if>
       <if test="ctime != null">
         ctime = #{ctime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="dtime != null">
+        dtime = #{dtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="atime != null">
+        atime = #{atime,jdbcType=TIMESTAMP},
       </if>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -374,6 +383,8 @@
       dealuserid = #{dealuserid,jdbcType=VARCHAR},
       assignuserid = #{assignuserid,jdbcType=VARCHAR},
       ctime = #{ctime,jdbcType=TIMESTAMP},
+      dtime = #{dtime,jdbcType=TIMESTAMP},
+      atime = #{atime,jdbcType=TIMESTAMP},
       username = #{username,jdbcType=VARCHAR},
       userphone = #{userphone,jdbcType=VARCHAR},
       rtime = #{rtime,jdbcType=TIMESTAMP},
@@ -387,6 +398,23 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
+
+
+  <select id="selectDoingByUserid" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where pay_state != 28 and state != 4
+  </select>
+
+  <select id="selectDoneByUserid" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where pay_state = 28 or state = 4
+  </select>
+
+
   <update id="modPayState" parameterType="com.aclic.lottery.Models.Record">
     update record
     set pay_state = 1
@@ -399,6 +427,4 @@
     set pay_state = 28
     where id = #{rid,jdbcType=VARCHAR}
   </update>
-
-
 </mapper>

@@ -13,6 +13,10 @@ public class Record {
 
     private Date ctime;
 
+    private Date dtime;
+
+    private Date atime;
+
     private String username;
 
     private String userphone;
@@ -71,6 +75,22 @@ public class Record {
 
     public void setCtime(Date ctime) {
         this.ctime = ctime;
+    }
+
+    public Date getDtime() {
+        return dtime;
+    }
+
+    public void setDtime(Date dtime) {
+        this.dtime = dtime;
+    }
+
+    public Date getAtime() {
+        return atime;
+    }
+
+    public void setAtime(Date atime) {
+        this.atime = atime;
     }
 
     public String getUsername() {
