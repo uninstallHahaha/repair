@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -140,7 +141,7 @@ public class RecordController {
             } else {
                 model.addAttribute("payres", "支付失败");
             }
-        }else{
+        } else {
             model.addAttribute("payres", "未在规定时间内支付, 订单已逾期");
         }
         return "pay_result";
@@ -161,6 +162,7 @@ public class RecordController {
         //TODO 用户模块需修改
         return recordService.findAllByUserid("");
     }
+
     //查询 - 所有 - 正在进行
     @ResponseBody
     @RequestMapping("/obtainRecordsDoing")
@@ -168,6 +170,7 @@ public class RecordController {
         //TODO 用户模块需修改
         return recordService.findDoingByUserid("");
     }
+
     //查询 - 所有 - 已完成
     @ResponseBody
     @RequestMapping("/obtainRecordsDone")
@@ -177,4 +180,16 @@ public class RecordController {
     }
 
 
+    //删除订单
+    @ResponseBody
+    @RequestMapping("/delRecord")
+    public int delRecord(String id) {
+        return recordService.delRecord(id);
+    }
+
+    @ResponseBody
+    @RequestMapping("/delRecordList")
+    public int delRecordList(@RequestParam(value = "ids[]") List<String> ids) {
+        return recordService.delRecordList(ids);
+    }
 }

@@ -25,7 +25,7 @@ function detailFormatter(index, row) {
 
 function operateFormatter_d(value, row, index) {
     return [
-        '<a class="remove" href="javascript:void(0)" title="详情">',
+        '<a class="detail" href="javascript:void(0)" title="详情">',
         '<i class="fa fa-dot-circle-o" aria-hidden="true"></i>',
         '</a>',
     ].join('')
@@ -80,7 +80,7 @@ window.operateEvents = {
     //删除
     'click .remove': function (e, value, row, index) {
         $.ajax({
-            url: '/delLog',
+            url: '/delRecord',
             data: {'id': row.id},
             method: 'post',
             async: false,
@@ -97,7 +97,20 @@ window.operateEvents = {
             }
         })
 
+    },
+    //详情
+    'click .detail': function (e, value, row, index) {
+        layer.open({
+            title: false,
+            type: 2,
+            area: ['800px', '600px'],
+            closeBtn: 1, //不显示关闭按钮
+            anim: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: '/getRecordDetailPage/'+row.id
+        });
     }
+
 }
 
 
@@ -133,7 +146,8 @@ function initTable() {
                 field: 'rtime',
                 title: '预约时间',
                 sortable: true,
-                align: 'center'
+                align: 'center',
+                formatter: timeFormater,
             },  {
                 field: 'state',
                 title: '记录状态',
@@ -195,7 +209,7 @@ function initTable() {
     $remove.click(function () {
         var ids = getIdSelections()
         $.ajax({
-            url: '/delLogList',
+            url: '/delRecordList',
             data: {'ids': ids},
             async: false,
             success: function (res) {

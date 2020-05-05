@@ -1,11 +1,13 @@
 E:\repair\src\main\java\com\aclic\lottery\Models\Notice.java
 E:\repair\src\main\java\com\aclic\lottery\Models\RecordExample.java
 E:\repair\src\main\java\com\aclic\lottery\Models\Admin.java
+E:\repair\src\main\java\com\aclic\lottery\controllers\PageController.java
 E:\repair\src\main\java\com\aclic\lottery\Utils\Utils.java
 E:\repair\src\main\java\com\aclic\lottery\controllers\RecordController.java
 E:\repair\src\main\java\com\aclic\lottery\Models\Comment.java
 E:\repair\src\main\java\com\aclic\lottery\controllers\FileUploadController.java
 E:\repair\src\main\java\com\aclic\lottery\daos\AdminMapper.java
+E:\repair\src\main\java\com\aclic\lottery\Utils\QRCodeUtil.java
 E:\repair\src\main\java\com\aclic\lottery\controllers\AvUploadController.java
 E:\repair\src\main\java\com\aclic\lottery\daos\RecordMapper.java
 E:\repair\src\main\java\com\aclic\lottery\Models\UserExample.java
@@ -13,11 +15,13 @@ E:\repair\src\main\java\com\aclic\lottery\Models\Record.java
 E:\repair\src\main\java\com\aclic\lottery\daos\NoticeMapper.java
 E:\repair\src\main\java\com\aclic\lottery\Models\CommentExample.java
 E:\repair\src\main\java\com\aclic\lottery\Models\Worker.java
+E:\repair\src\main\java\com\aclic\lottery\Utils\BufferedImageLuminanceSource.java
 E:\repair\src\main\java\com\aclic\lottery\Models\AdminExample.java
 E:\repair\src\main\java\com\aclic\lottery\services\UserService.java
 E:\repair\src\main\java\com\aclic\lottery\Models\NoticeExample.java
 E:\repair\src\main\java\com\aclic\lottery\Models\User.java
 E:\repair\src\main\java\com\aclic\lottery\daos\UserMapper.java
+E:\repair\src\main\java\com\aclic\lottery\services\RecordService.java
 E:\repair\src\main\java\com\aclic\lottery\TestJdbc.java
 E:\repair\src\main\java\com\aclic\lottery\controllers\UserController.java
 E:\repair\src\main\java\com\aclic\lottery\Models\WorkerExample.java

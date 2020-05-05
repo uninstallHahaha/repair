@@ -45,4 +45,21 @@ public class RecordService {
     public List<Record> findDoneByUserid(String s) {
         return recordMapper.selectDoneByUserid(s);
     }
+
+    public int delRecord(String id) {
+        return recordMapper.deleteByPrimaryKey(id);
+    }
+
+    //del list
+    public int delRecordList(List<String> ids){
+        int res = 1;
+        for (String id:
+                ids) {
+            int curres= recordMapper.deleteByPrimaryKey(id);
+            if(curres != 1){
+                res = 0;
+            }
+        }
+        return res;
+    }
 }
