@@ -1,6 +1,7 @@
 package com.aclic.lottery.controllers;
 
 import com.aclic.lottery.Models.Comment;
+import com.aclic.lottery.Models.Record;
 import com.aclic.lottery.services.CommentService;
 import com.aclic.lottery.services.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,4 +53,20 @@ public class PageController {
     }
 
 
+
+    @RequestMapping("/getSearchPage/{rid}")//
+    public String getSearchPage(@PathVariable String rid, Model model){
+        Record one = new Record();
+        if(rid != "alice"){
+            one = recordService.findOne(rid);
+            if(one  == null){
+                one = new Record();
+            }
+            model.addAttribute("rid",rid);
+        }else{
+            model.addAttribute("rid","");
+        }
+        model.addAttribute("comment",one);
+        return "record_search";
+    }
 }
