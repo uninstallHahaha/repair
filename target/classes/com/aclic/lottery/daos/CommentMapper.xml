@@ -85,12 +85,17 @@
       order by ${orderByClause}
     </if>
   </select>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from comment
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from comment
     where id = #{id,jdbcType=VARCHAR}
@@ -240,4 +245,13 @@
       ctime = #{ctime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+
+  <select id="selectByRecordId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    *
+    from comment
+    where recordid = #{rid,jdbcType=VARCHAR}
+  </select>
 </mapper>

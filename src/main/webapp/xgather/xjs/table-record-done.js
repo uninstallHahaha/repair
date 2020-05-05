@@ -30,6 +30,13 @@ function operateFormatter_d(value, row, index) {
         '</a>',
     ].join('')
 }
+function operateFormatter_c(value, row, index) {
+    return [
+        '<a class="comment" href="javascript:void(0)" title="评价">',
+        '<i class="fa fa-commenting" aria-hidden="true"></i>',
+        '</a>',
+    ].join('')
+}
 
 function operateFormatter_r(value, row, index) {
     return [
@@ -109,7 +116,19 @@ window.operateEvents = {
             shadeClose: true, //开启遮罩关闭
             content: '/getRecordDetailPage/'+row.id
         });
-    }
+    },
+    //评价
+    'click .comment': function (e, value, row, index) {
+        layer.open({
+            title: false,
+            type: 2,
+            area: ['800px', '300px'],
+            closeBtn: 1, //不显示关闭按钮
+            anim: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: '/getCommentPage/'+row.id
+        });
+    },
 
 }
 
@@ -183,6 +202,13 @@ function initTable() {
                 clickToSelect: false,
                 events: window.operateEvents,
                 formatter: operateFormatter_d
+            },{
+                field: 'operate_c',
+                title: '评价',
+                align: 'center',
+                clickToSelect: false,
+                events: window.operateEvents,
+                formatter: operateFormatter_c
             },{
                 field: 'operate_r',
                 title: '删除',

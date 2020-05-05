@@ -1,5 +1,7 @@
 package com.aclic.lottery.controllers;
 
+import com.aclic.lottery.Models.Comment;
+import com.aclic.lottery.services.CommentService;
 import com.aclic.lottery.services.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,8 @@ public class PageController {
 
     @Autowired
     RecordService recordService;
+    @Autowired
+    CommentService commentService;
 
     @RequestMapping("/gettopaypage/{rid}")//
     public String gettopaypage(@PathVariable String rid, Model model){
@@ -32,4 +36,20 @@ public class PageController {
         model.addAttribute("record",recordService.findOne(rid));
         return "modal/record_detail";
     }
+
+    @RequestMapping("/getCommentPage/{rid}")//
+    public String getCommentPage(@PathVariable String rid, Model model){
+        Comment one = commentService.findOne(rid);
+        if(one  == null){
+            one = new Comment();
+            one.setStar(0);
+            one.setId(null);
+            one.setComment("");
+        }
+        model.addAttribute("comment",one);
+        model.addAttribute("rid",rid);
+        return "modal/record_comment";
+    }
+
+
 }
