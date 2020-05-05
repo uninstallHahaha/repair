@@ -27,4 +27,6 @@ public interface WorkerMapper {
     int updateByPrimaryKeySelective(Worker record);
 
     int updateByPrimaryKey(Worker record);
+
+    Worker selectByName(String name);
 }

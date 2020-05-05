@@ -17,4 +17,12 @@ public class UserService {
     public List<User> findAll(){
         return userMapper.selectByExample(new UserExample());
     }
+
+    public User findOneByName(String name){
+        return  userMapper.selectByName(name);
+    }
+
+    public int addUser(User user) {
+        return userMapper.insert(user);
+    }
 }

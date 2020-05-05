@@ -69,6 +69,8 @@
   <sql id="Base_Column_List">
     id, name, pass, pic, email
   </sql>
+
+
   <select id="selectByExample" parameterType="com.aclic.lottery.Models.UserExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -83,12 +85,22 @@
       order by ${orderByClause}
     </if>
   </select>
+
+
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from user
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select *
+    from user
+    where name = #{name,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from user
     where id = #{id,jdbcType=VARCHAR}

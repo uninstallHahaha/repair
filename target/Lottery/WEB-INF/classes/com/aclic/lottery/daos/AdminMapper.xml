@@ -208,4 +208,11 @@
       pic = #{pic,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select *
+    from admin
+    where name = #{name,jdbcType=VARCHAR}
+  </select>
 </mapper>

@@ -69,4 +69,9 @@ public class PageController {
         model.addAttribute("comment",one);
         return "record_search";
     }
+
+    @RequestMapping("/loginpage")
+    public String getloginpage(){
+        return "page-login";
+    }
 }

@@ -3,6 +3,8 @@ package com.aclic.lottery.daos;
 import com.aclic.lottery.Models.Admin;
 import com.aclic.lottery.Models.AdminExample;
 import java.util.List;
+
+import com.aclic.lottery.Models.User;
 import org.apache.ibatis.annotations.Param;
 
 public interface AdminMapper {
@@ -27,4 +29,6 @@ public interface AdminMapper {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+
+    Admin selectByName(String name);
 }
