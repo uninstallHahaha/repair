@@ -161,4 +161,20 @@ public class RecordController {
         //TODO 用户模块需修改
         return recordService.findAllByUserid("");
     }
+    //查询 - 所有 - 正在进行
+    @ResponseBody
+    @RequestMapping("/obtainRecordsDoing")
+    public List<Record> obtainRecordsDoing(String id) {
+        //TODO 用户模块需修改
+        return recordService.findDoingByUserid("");
+    }
+    //查询 - 所有 - 已完成
+    @ResponseBody
+    @RequestMapping("/obtainRecordsDone")
+    public List<Record> obtainRecordsDone(String id) {
+        //TODO 用户模块需修改
+        return recordService.findDoneByUserid("");
+    }
+
+
 }

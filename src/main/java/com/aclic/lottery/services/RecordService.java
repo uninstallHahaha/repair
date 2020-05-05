@@ -35,4 +35,13 @@ public class RecordService {
     public List<Record> findAllByUserid(String s) {
         return recordMapper.selectByExample(new RecordExample());
     }
+
+    public List<Record> findDoingByUserid(String s) {
+     return recordMapper.selectDoingByUserid(s);
+
+    }
+
+    public List<Record> findDoneByUserid(String s) {
+        return recordMapper.selectDoneByUserid(s);
+    }
 }

@@ -6,6 +6,7 @@ $(function () {
         elem: '#rtime',
         type: 'datetime',
         value: new Date(),
+        trigger: 'click',
         min: 0,
         change: function (value, date, endDate) {
             rtime = value

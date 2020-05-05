@@ -31,4 +31,8 @@ public interface RecordMapper {
     int modPayState(String rid);
 
     int updatePayStateTo28(String id);
+
+    List<Record> selectDoingByUserid(String s);
+
+    List<Record> selectDoneByUserid(String s);
 }

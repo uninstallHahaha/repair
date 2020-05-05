@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>报修记录 - 表格</title>
+		<title>报修记录 - 正在进行记录</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<!-- google font -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
@@ -181,18 +181,16 @@
 							</a>
 						</li>
 
-						<li class="menu_sub dcjq-parent-li">
-							<a href="#" class="dcjq-parent">
-								<i class="fa fa-file text-aqua"></i>
-								<span>报修记录</span>
-								<span class="arrow"></span>
+						<li class="menu_sub">
+							<a href="./table-record.html"> <i class="fa fa-file text-aqua"></i> <span>报修记录</span>
+
 							</a>
 							<ul class="down_menu" style="display: block;">
 								<li>
-									<a href="/table-record-doing.html">正在进行的订单</a>
+									<a href="index.html">正在进行的订单</a>
 								</li>
 								<li>
-									<a href="/table-record-done.html">已完成订单</a>
+									<a href="index1.html">已完成订单</a>
 								</li>
 							</ul>
 						</li>
@@ -256,9 +254,9 @@
 
 										<!--  bootstrap table  -->
 										<div id="toolbar">
-											<button id="remove" class="btn btn-danger" disabled>
-												<i class="glyphicon glyphicon-remove"></i> 删除
-											</button>
+<!--											<button id="remove" class="btn btn-danger" disabled>-->
+<!--												<i class="glyphicon glyphicon-remove"></i> 删除-->
+<!--											</button>-->
 										</div>
 										<table
 												id="table"
@@ -280,7 +278,7 @@
 												data-page-list="[10, 25, 50, 100, all]"
 												data-show-footer="false"
 												data-side-pagination="client"
-												data-url="/obtainRecords"
+												data-url="/obtainRecordsDoing"
 												data-response-handler="responseHandler">
 										</table>
 										<!-- End bootstrap table  -->
@@ -354,8 +352,8 @@
 		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-all.min.js"></script>
 		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
-
-		<script src="/xgather/xjs/table-record.js"></script>
+		<script src="/xgather/xlib/layer/layer.js"></script>
+		<script src="/xgather/xjs/table-record-doing.js"></script>
 	</body>
 
 </html>
