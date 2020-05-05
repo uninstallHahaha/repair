@@ -9,6 +9,7 @@
     <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
     <result column="dtime" jdbcType="TIMESTAMP" property="dtime" />
     <result column="atime" jdbcType="TIMESTAMP" property="atime" />
+    <result column="finishtime" jdbcType="TIMESTAMP" property="finishtime" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="userphone" jdbcType="VARCHAR" property="userphone" />
     <result column="rtime" jdbcType="TIMESTAMP" property="rtime" />
@@ -19,6 +20,7 @@
     <result column="pic" jdbcType="VARCHAR" property="pic" />
     <result column="pay_state" jdbcType="INTEGER" property="payState" />
     <result column="pay_price" jdbcType="INTEGER" property="payPrice" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -79,8 +81,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, subuserid, dealuserid, assignuserid, ctime, dtime, atime, username, userphone, 
-    rtime, state, type, where_repair, detail, pic, pay_state, pay_price
+    id, subuserid, dealuserid, assignuserid, ctime, dtime, atime, finishtime, username, 
+    userphone, rtime, state, type, where_repair, detail, pic, pay_state, pay_price, pay_time
   </sql>
   <select id="selectByExample" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
     select
@@ -115,16 +117,18 @@
   <insert id="insert" parameterType="com.aclic.lottery.Models.Record">
     insert into record (id, subuserid, dealuserid, 
       assignuserid, ctime, dtime, 
-      atime, username, userphone, 
-      rtime, state, type, 
-      where_repair, detail, pic, 
-      pay_state, pay_price)
+      atime, finishtime, username, 
+      userphone, rtime, state, 
+      type, where_repair, detail, 
+      pic, pay_state, pay_price, 
+      pay_time)
     values (#{id,jdbcType=VARCHAR}, #{subuserid,jdbcType=VARCHAR}, #{dealuserid,jdbcType=VARCHAR}, 
       #{assignuserid,jdbcType=VARCHAR}, #{ctime,jdbcType=TIMESTAMP}, #{dtime,jdbcType=TIMESTAMP}, 
-      #{atime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, #{userphone,jdbcType=VARCHAR}, 
-      #{rtime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
-      #{whereRepair,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, 
-      #{payState,jdbcType=INTEGER}, #{payPrice,jdbcType=INTEGER})
+      #{atime,jdbcType=TIMESTAMP}, #{finishtime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, 
+      #{userphone,jdbcType=VARCHAR}, #{rtime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, 
+      #{type,jdbcType=INTEGER}, #{whereRepair,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
+      #{pic,jdbcType=VARCHAR}, #{payState,jdbcType=INTEGER}, #{payPrice,jdbcType=INTEGER}, 
+      #{payTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.aclic.lottery.Models.Record">
     insert into record
@@ -149,6 +153,9 @@
       </if>
       <if test="atime != null">
         atime,
+      </if>
+      <if test="finishtime != null">
+        finishtime,
       </if>
       <if test="username != null">
         username,
@@ -180,6 +187,9 @@
       <if test="payPrice != null">
         pay_price,
       </if>
+      <if test="payTime != null">
+        pay_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -202,6 +212,9 @@
       </if>
       <if test="atime != null">
         #{atime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishtime != null">
+        #{finishtime,jdbcType=TIMESTAMP},
       </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
@@ -232,6 +245,9 @@
       </if>
       <if test="payPrice != null">
         #{payPrice,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null">
+        #{payTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -265,6 +281,9 @@
       <if test="record.atime != null">
         atime = #{record.atime,jdbcType=TIMESTAMP},
       </if>
+      <if test="record.finishtime != null">
+        finishtime = #{record.finishtime,jdbcType=TIMESTAMP},
+      </if>
       <if test="record.username != null">
         username = #{record.username,jdbcType=VARCHAR},
       </if>
@@ -295,6 +314,9 @@
       <if test="record.payPrice != null">
         pay_price = #{record.payPrice,jdbcType=INTEGER},
       </if>
+      <if test="record.payTime != null">
+        pay_time = #{record.payTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -309,6 +331,7 @@
       ctime = #{record.ctime,jdbcType=TIMESTAMP},
       dtime = #{record.dtime,jdbcType=TIMESTAMP},
       atime = #{record.atime,jdbcType=TIMESTAMP},
+      finishtime = #{record.finishtime,jdbcType=TIMESTAMP},
       username = #{record.username,jdbcType=VARCHAR},
       userphone = #{record.userphone,jdbcType=VARCHAR},
       rtime = #{record.rtime,jdbcType=TIMESTAMP},
@@ -318,7 +341,8 @@
       detail = #{record.detail,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
       pay_state = #{record.payState,jdbcType=INTEGER},
-      pay_price = #{record.payPrice,jdbcType=INTEGER}
+      pay_price = #{record.payPrice,jdbcType=INTEGER},
+      pay_time = #{record.payTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -343,6 +367,9 @@
       </if>
       <if test="atime != null">
         atime = #{atime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="finishtime != null">
+        finishtime = #{finishtime,jdbcType=TIMESTAMP},
       </if>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -374,6 +401,9 @@
       <if test="payPrice != null">
         pay_price = #{payPrice,jdbcType=INTEGER},
       </if>
+      <if test="payTime != null">
+        pay_time = #{payTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
@@ -385,6 +415,7 @@
       ctime = #{ctime,jdbcType=TIMESTAMP},
       dtime = #{dtime,jdbcType=TIMESTAMP},
       atime = #{atime,jdbcType=TIMESTAMP},
+      finishtime = #{finishtime,jdbcType=TIMESTAMP},
       username = #{username,jdbcType=VARCHAR},
       userphone = #{userphone,jdbcType=VARCHAR},
       rtime = #{rtime,jdbcType=TIMESTAMP},
@@ -394,7 +425,8 @@
       detail = #{detail,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
       pay_state = #{payState,jdbcType=INTEGER},
-      pay_price = #{payPrice,jdbcType=INTEGER}
+      pay_price = #{payPrice,jdbcType=INTEGER},
+      pay_time = #{payTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
 
@@ -417,14 +449,16 @@
 
   <update id="modPayState" parameterType="com.aclic.lottery.Models.Record">
     update record
-    set pay_state = 1
+    set pay_state = 1,
+    pay_time = now()
     where id = #{rid,jdbcType=VARCHAR}
   </update>
 
 
   <update id="updatePayStateTo28" parameterType="com.aclic.lottery.Models.Record">
     update record
-    set pay_state = 28
+    set pay_state = 28,
+    pay_time = now()
     where id = #{rid,jdbcType=VARCHAR}
   </update>
 </mapper>

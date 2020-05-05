@@ -17,6 +17,8 @@ public class Record {
 
     private Date atime;
 
+    private Date finishtime;
+
     private String username;
 
     private String userphone;
@@ -36,6 +38,8 @@ public class Record {
     private Integer payState;
 
     private Integer payPrice;
+
+    private Date payTime;
 
     public String getId() {
         return id;
@@ -91,6 +95,14 @@ public class Record {
 
     public void setAtime(Date atime) {
         this.atime = atime;
+    }
+
+    public Date getFinishtime() {
+        return finishtime;
+    }
+
+    public void setFinishtime(Date finishtime) {
+        this.finishtime = finishtime;
     }
 
     public String getUsername() {
@@ -171,5 +183,13 @@ public class Record {
 
     public void setPayPrice(Integer payPrice) {
         this.payPrice = payPrice;
+    }
+
+    public Date getPayTime() {
+        return payTime;
+    }
+
+    public void setPayTime(Date payTime) {
+        this.payTime = payTime;
     }
 }

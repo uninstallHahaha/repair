@@ -2,6 +2,8 @@ package com.aclic.lottery.daos;
 
 import com.aclic.lottery.Models.Record;
 import com.aclic.lottery.Models.RecordExample;
+
+import java.util.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,11 +30,14 @@ public interface RecordMapper {
 
     int updateByPrimaryKey(Record record);
 
+    //更新支付状态
     int modPayState(String rid);
 
+    //支付逾期
     int updatePayStateTo28(String id);
 
     List<Record> selectDoingByUserid(String s);
 
     List<Record> selectDoneByUserid(String s);
+
 }
