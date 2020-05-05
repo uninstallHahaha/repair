@@ -82,7 +82,7 @@ public class LoginController {
     @ResponseBody
     @RequestMapping("/signup")
     public Map<String, Object> signup(HttpSession session,
-                                      String name, String pass, int role) {
+                                      String name, String pass) {
         HashMap<String, Object> map = new HashMap<>();
         User oneByName = userService.findOneByName(name);
         if (oneByName != null) {

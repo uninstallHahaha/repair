@@ -74,4 +74,10 @@ public class PageController {
     public String getloginpage(){
         return "page-login";
     }
+
+
+    @RequestMapping("/signuppage")
+    public String getsignuppage(){
+        return "page-signup";
+    }
 }

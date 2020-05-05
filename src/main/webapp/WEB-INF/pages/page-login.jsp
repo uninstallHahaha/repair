@@ -72,7 +72,7 @@
                 <button id="loginBtn" class="btn btn-success btn-flat m-b-30 m-t-30">登录</button>
                 <div class="register-link m-t-15 text-center">
                     <p>还没有账户 ?
-                        <a href="#"> 注册</a>
+                        <a href="/signuppage"> 注册</a>
                     </p>
                 </div>
             </div>
