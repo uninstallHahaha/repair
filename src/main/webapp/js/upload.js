@@ -60,10 +60,10 @@ function doAVUpload() {
         data: {av: newAVName},
         success: function (res) {
             layer.closeAll('loading');
-            //实时改变个人中心头像
-            parent.$('#bigAV').attr("src", newAVPath);
-            parent.$('#avImg').attr("src", newAVPath);
             if (res.stat == 1) {
+                //实时改变个人中心头像
+                parent.$('#bigAV').attr("src", newAVPath);
+                // parent.$('#avImg').attr("src", newAVPath);
                 parent.layer.msg("上传头像成功", {icon: 1})
             } else {
                 parent.layer.msg(res.data, {icon: 2})

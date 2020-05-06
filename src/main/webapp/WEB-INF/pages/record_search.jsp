@@ -262,7 +262,7 @@
                 </li>
 
                 <li class="menu_sub">
-                    <a href="./profile.html"> <i class="fa fa-file text-aqua"></i> <span>个人中心</span>
+                    <a href="./profile.profile.jsp"> <i class="fa fa-file text-aqua"></i> <span>个人中心</span>
 
                     </a>
                 </li>

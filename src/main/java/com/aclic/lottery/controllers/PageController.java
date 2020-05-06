@@ -80,4 +80,14 @@ public class PageController {
     public String getsignuppage(){
         return "page-signup";
     }
+
+    @RequestMapping("/profilepage")
+    public String getprofilepage(){
+        return "profile";
+    }
+
+    @RequestMapping("/getUploadPage")
+    public String getUploadPage() {
+        return "upload";
+    }
 }

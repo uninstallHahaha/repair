@@ -25,4 +25,8 @@ public class UserService {
     public int addUser(User user) {
         return userMapper.insert(user);
     }
+
+    public int modUser(User u) {
+        return userMapper.updateByPrimaryKey(u);
+    }
 }

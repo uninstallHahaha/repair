@@ -16,9 +16,9 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link href="css/upload.css"
+    <link href="/css/upload.css"
           rel="stylesheet">
-    <script src="js/upload.js"></script>
+    <script src="/js/upload.js"></script>
 </head>
 <body>
 
