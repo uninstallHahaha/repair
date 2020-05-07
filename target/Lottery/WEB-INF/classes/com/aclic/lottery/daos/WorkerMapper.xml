@@ -246,4 +246,11 @@
     from worker
     where name = #{name,jdbcType=VARCHAR}
   </select>
+
+
+  <update id="assignTodo" parameterType="com.aclic.lottery.Models.Worker">
+    update worker
+    set todo = todo+1
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
 </mapper>

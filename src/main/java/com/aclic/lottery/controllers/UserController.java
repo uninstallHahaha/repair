@@ -121,4 +121,11 @@ public class UserController {
         return "active_email_res";
     }
 
+
+    @ResponseBody
+    @RequestMapping("/delUser")
+    public int delUser(String id, HttpSession session) {//✔
+        return userService.delUser(id);
+    }
+
 }

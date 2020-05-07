@@ -38,4 +38,8 @@ public class UserService {
 
         return userMapper.selectByPrimaryKey(id);
     }
+
+    public int delUser(String id) {
+        return userMapper.deleteByPrimaryKey(id);
+    }
 }

@@ -6,6 +6,7 @@ import com.aclic.lottery.Models.User;
 import com.aclic.lottery.Models.Worker;
 import com.aclic.lottery.services.CommentService;
 import com.aclic.lottery.services.RecordService;
+import com.aclic.lottery.services.UserService;
 import com.aclic.lottery.services.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,8 @@ public class PageController {
     CommentService commentService;
     @Autowired
     WorkerService workerService;
+    @Autowired
+    UserService userService;
 
     @RequestMapping("/gettopaypage/{rid}")//
     public String gettopaypage(@PathVariable String rid, Model model){
@@ -148,5 +151,11 @@ public class PageController {
     @RequestMapping("/adminindex")
     public String getadminindex() {//✔
         return "redirect:/table-record-deal.html";
+    }
+
+    @RequestMapping("/userlistpage")
+    public String userlistpage(Model model) {//✔
+        model.addAttribute("users",userService.findAll());
+        return "lists-user";
     }
 }
