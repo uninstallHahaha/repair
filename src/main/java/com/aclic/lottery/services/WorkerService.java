@@ -29,4 +29,8 @@ public class WorkerService {
     public int assignTodo(String id) {
         return workerMapper.assignTodo(id);
     }
+
+    public int delWorker(String id) {
+        return workerMapper.deleteByPrimaryKey(id);
+    }
 }

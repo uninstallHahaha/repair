@@ -158,4 +158,16 @@ public class PageController {
         model.addAttribute("users",userService.findAll());
         return "lists-user";
     }
+    @RequestMapping("/workerlistpage")
+    public String workerlistpage(Model model) {//✔
+        model.addAttribute("workers",workerService.findAll());
+        return "lists-worker";
+    }
+
+
+    //add worker page
+    @RequestMapping("/getaddworkerpage")
+    public String getaddworkerpage() {//✔
+        return "addWorker";
+    }
 }
