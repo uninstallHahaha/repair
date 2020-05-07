@@ -42,6 +42,9 @@ public class RecordService {
 
     }
 
+    public List<Record> findDone() {
+        return recordMapper.selectDone();
+    }
     public List<Record> findDoneByUserid(String s) {
         return recordMapper.selectDoneByUserid(s);
     }

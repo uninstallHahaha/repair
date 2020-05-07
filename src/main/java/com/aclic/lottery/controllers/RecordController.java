@@ -1,6 +1,7 @@
 package com.aclic.lottery.controllers;
 
 import com.aclic.lottery.Models.Record;
+import com.aclic.lottery.Models.User;
 import com.aclic.lottery.Utils.QRCodeUtil;
 import com.aclic.lottery.Utils.Utils;
 import com.aclic.lottery.services.RecordService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -175,8 +177,14 @@ public class RecordController {
     @ResponseBody
     @RequestMapping("/obtainRecordsDone")
     public List<Record> obtainRecordsDone(String id) {
-        //TODO 用户模块需修改
-        return recordService.findDoneByUserid("");
+        return recordService.findDone();
+    }
+    //查询 - 所有 - 已完成 - 用户
+    @ResponseBody
+    @RequestMapping("/obtainRecordsDoneByUserId")
+    public List<Record> obtainRecordsDoneByUserId(HttpSession session) {
+        User user = (User)session.getAttribute("USER");
+        return recordService.findDoneByUserid(user.getId());
     }
 
 

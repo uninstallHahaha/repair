@@ -113,4 +113,10 @@ public class PageController {
                         : "当前绑定的邮箱:" + user.getEmail());
         return "emailPage";
     }
+
+
+    @RequestMapping("/adminindex")
+    public String getadminindex() {//✔
+        return "redirect:/table-record-deal.html";
+    }
 }

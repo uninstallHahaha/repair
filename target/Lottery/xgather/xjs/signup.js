@@ -3,6 +3,7 @@ $(function () {
         var name = $('#name').val()
         var pass = $('#pass').val()
         var repass = $('#repass').val()
+        var email = $('#email').val()
         if (name == "" || pass == "" || repass == "") {
             layer.msg('账号或密码不能为空')
             return
@@ -22,7 +23,7 @@ $(function () {
         $.ajax({
             url: '/signup',
             method: 'post',
-            data: {name: name, pass: pass},
+            data: {name: name, pass: pass ,email:email},
             success: function (res) {
                 if (res.stat == 1) {
                     layer.msg('注册成功,已为您自动登录', function () {

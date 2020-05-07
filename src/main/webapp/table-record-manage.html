@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>报修记录 - 表格</title>
+		<title>管理端 - 报修管理</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<!-- google font -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
@@ -170,45 +170,27 @@
 					<ul id="dc_accordion" class="sidebar-menu tree">
 
 						<li class="menu_sub">
-							<a href="./index.html"> <i class="fa fa-file text-aqua"></i> <span>首页</span>
-
+							<a href="./table-record.html">
+								<i class="fa fa-file text-aqua"></i> <span>报修受理</span>
 							</a>
 						</li>
 
 						<li class="menu_sub">
-							<a href="./form-request.html"> <i class="fa fa-file text-aqua"></i> <span>报修申请</span>
-
+							<a href="/table-record-manage.html">
+								<i class="fa fa-file text-aqua"></i> <span>报修管理 </span>
 							</a>
 						</li>
-
-						<li class="menu_sub dcjq-parent-li">
-							<a href="#" class="dcjq-parent">
-								<i class="fa fa-file text-aqua"></i>
-								<span>报修记录</span>
-								<span class="arrow"></span>
-							</a>
-							<ul class="down_menu" style="display: block;">
-								<li>
-									<a href="/table-record-doing.html">正在进行的订单</a>
-								</li>
-								<li>
-									<a href="/table-record-done.html">已完成订单</a>
-								</li>
-							</ul>
-						</li>
-
 						<li class="menu_sub">
-							<a href="#"> <i class="fa fa-file text-aqua"></i> <span>报修查询</span>
-
+							<a href="./lists-user.html">
+								<i class="fa fa-file text-aqua"></i> <span>用户管理</span>
 							</a>
 						</li>
 
 						<li class="menu_sub">
-							<a href="./profile.html"> <i class="fa fa-file text-aqua"></i> <span>个人中心</span>
-
+							<a href="./lists-worker.html">
+								<i class="fa fa-file text-aqua"></i> <span>维修人员管理 </span>
 							</a>
 						</li>
-
 
 					</ul>
 				</div>
@@ -221,7 +203,7 @@
 							<div class="row d-flex align-items-center">
 								<div class="col-md-6">
 									<div class="page-breadcrumb">
-										<h1>报修记录</h1>
+										<h1>报修管理</h1>
 									</div>
 								</div>
 								<div class="col-md-6 justify-content-md-end d-flex">
@@ -229,11 +211,8 @@
 										<ol class="breadcrumb">
 											<li>
 												<i class="fa fa-home"></i>
-												<a class="parent-item" href="index.html">主页</a>
+												<a class="parent-item" href="index.html">报修管理</a>
 												<i class="fa fa-angle-right"></i>
-											</li>
-											<li class="active">
-												报修记录
 											</li>
 										</ol>
 									</div>
@@ -249,7 +228,7 @@
 								<div class="card card-shadow mb-4">
 									<div class="card-header">
 										<div class="card-title">
-											我的报修记录
+											报修管理
 										</div>
 									</div>
 									<div class="card-body">
@@ -280,7 +259,7 @@
 												data-page-list="[10, 25, 50, 100, all]"
 												data-show-footer="false"
 												data-side-pagination="client"
-												data-url="/obtainRecords"
+												data-url="/obtainRecordsDone"
 												data-response-handler="responseHandler">
 										</table>
 										<!-- End bootstrap table  -->
@@ -354,8 +333,9 @@
 		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-all.min.js"></script>
 		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
-
-		<script src="/xgather/xjs/table-record.js"></script>
+		<link rel="stylesheet" href="/xgather/xcss/scroll.css">
+		<script src="/xgather/xlib/layer/layer.js"></script>
+		<script src="/xgather/xjs/table-record-manage.js"></script>
 	</body>
 
 </html>

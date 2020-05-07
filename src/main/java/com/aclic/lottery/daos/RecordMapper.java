@@ -38,6 +38,7 @@ public interface RecordMapper {
 
     List<Record> selectDoingByUserid(String s);
 
-    List<Record> selectDoneByUserid(String s);
+    List<Record> selectDoneByUserid(String id);
 
+    List<Record> selectDone();
 }
