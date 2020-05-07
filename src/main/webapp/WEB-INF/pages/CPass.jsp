@@ -15,8 +15,8 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script src="js/CPass.js"></script>
-    <link href="css/CPass.css" rel="stylesheet">
+    <script src="/js/CPass.js"></script>
+    <link href="/css/CPass.css" rel="stylesheet">
 
 </head>
 <body>

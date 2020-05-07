@@ -496,7 +496,7 @@
                                 <img	title="点击切换头像" id="bigAV" class="img-circle"
                                         style="width: 120px;height: 120px;"
                                         src="/uploads/avatars/${sessionScope.USER.pic}" alt="">
-                                <h3 class="h3">${sessionScope.USER.name}</h3>
+                                <h3 class="h3" id="username">${sessionScope.USER.name}</h3>
                             </div>
                             <div class="profile-cover__action bg--img" data-overlay="0.3">
                                 <button class="btn btn-rounded btn-info" style="visibility: hidden;">
@@ -510,18 +510,17 @@
                             </div>
                             <div class="profile-cover__info">
                                 <ul class="nav">
-                                    <li>
+                                    <li id="changeName">
                                         <strong>
                                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                                        </strong>
-                                        修改用户名
+                                        </strong>修改用户名
                                     </li>
-                                    <li>
+                                    <li  id="changePass">
                                         <strong>
                                             <i class="fa fa-key" aria-hidden="true"></i>
                                         </strong>修改密码
                                     </li>
-                                    <li>
+                                    <li id="bindEmail">
                                         <strong>
                                             <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
                                         </strong>修改邮箱

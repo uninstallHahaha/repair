@@ -39,6 +39,16 @@ function changePass() {
         content: 'getChangePassPage'
     });
 }
+function changeName() {
+    layer.open({
+        type: 2,
+        title: '修改用户名',
+        shadeClose: true,
+        shade: 0.8,
+        area: ['400px', '400px'],
+        content: 'getChangeNamePage'
+    });
+}
 
 function outComment(id) {
     layer.confirm('确定删除这条评论?', {
@@ -68,6 +78,8 @@ $(function () {
     $("#bigAV").click(changeAV)
 
     $('#changePass').click(changePass)
+    $('#changeName').click(changeName)
+
 
     $('#bindEmail').mouseover(function () {
         layer.tips('绑定邮箱后可使用邮箱找回密码', '#bindEmail')

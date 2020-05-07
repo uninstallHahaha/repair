@@ -2,6 +2,14 @@ function subModPass(){
     let oldPs= $('#oldPass').val()
     let ps = $('#newPass').val()
     let reps = $('#reNewPass').val()
+    if( oldPs == "" || ps == "" || reps == "" ){
+        layer.msg('请完善信息')
+        return
+    }
+    if( ps != reps){
+        layer.msg('两次输入的新密码不同,请重新输入')
+        return
+    }
     if(ps.length<8){
         layer.msg('密码不能小于8位')
         return

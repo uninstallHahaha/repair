@@ -4,6 +4,8 @@ import com.aclic.lottery.Models.User;
 import com.aclic.lottery.Models.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface UserMapper {
     long countByExample(UserExample example);
@@ -29,4 +31,10 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User selectByName(String name);
+
+    //active email
+    public int activeEmail(User user);
+
+    //forget
+    public User findOneByName(String account);
 }

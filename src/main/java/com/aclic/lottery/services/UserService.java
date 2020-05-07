@@ -29,4 +29,13 @@ public class UserService {
     public int modUser(User u) {
         return userMapper.updateByPrimaryKey(u);
     }
+
+    public int activeEmail(User user) {
+        return userMapper.activeEmail(user);
+    }
+
+    public User findOneById(String id) {
+
+        return userMapper.selectByPrimaryKey(id);
+    }
 }

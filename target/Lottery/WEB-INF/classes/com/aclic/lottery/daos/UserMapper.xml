@@ -220,4 +220,15 @@
       email = #{email,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+  <update id="activeEmail" parameterType="com.aclic.lottery.Models.User">
+    update user set email=#{email} where id=#{id}
+  </update>
+
+
+  <select id="findOneByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+   select * from user where name=#{account}
+  </select>
+
 </mapper>

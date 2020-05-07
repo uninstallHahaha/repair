@@ -2,6 +2,7 @@ package com.aclic.lottery.controllers;
 
 import com.aclic.lottery.Models.Comment;
 import com.aclic.lottery.Models.Record;
+import com.aclic.lottery.Models.User;
 import com.aclic.lottery.services.CommentService;
 import com.aclic.lottery.services.RecordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class PageController {
@@ -89,5 +92,25 @@ public class PageController {
     @RequestMapping("/getUploadPage")
     public String getUploadPage() {
         return "upload";
+    }
+
+    //show change password
+    @RequestMapping("/getChangePassPage")
+    public String getChangePassPage() {//✔
+        return "CPass";
+    }
+    //show change password
+    @RequestMapping("/getChangeNamePage")
+    public String getChangeNamePage() {//✔
+        return "CName";
+    }
+
+    @RequestMapping("getEmailPage")
+    public String getEmailPage(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("USER");
+        model.addAttribute("curEmail",
+                user.getEmail().equals("null@null.com") ? "您还未绑定邮箱"
+                        : "当前绑定的邮箱:" + user.getEmail());
+        return "emailPage";
     }
 }
