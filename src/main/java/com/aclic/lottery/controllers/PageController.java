@@ -3,8 +3,10 @@ package com.aclic.lottery.controllers;
 import com.aclic.lottery.Models.Comment;
 import com.aclic.lottery.Models.Record;
 import com.aclic.lottery.Models.User;
+import com.aclic.lottery.Models.Worker;
 import com.aclic.lottery.services.CommentService;
 import com.aclic.lottery.services.RecordService;
+import com.aclic.lottery.services.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class PageController {
@@ -21,6 +25,8 @@ public class PageController {
     RecordService recordService;
     @Autowired
     CommentService commentService;
+    @Autowired
+    WorkerService workerService;
 
     @RequestMapping("/gettopaypage/{rid}")//
     public String gettopaypage(@PathVariable String rid, Model model){
@@ -103,6 +109,30 @@ public class PageController {
     @RequestMapping("/getChangeNamePage")
     public String getChangeNamePage() {//✔
         return "CName";
+    }
+
+    //选择修理人员
+    @RequestMapping("/getWorkerSelectPage/{rid}")
+    public String getWorkerSelectPage(Model model,
+                                      @PathVariable String rid) {//✔
+        List<Worker> allWorkers = workerService.findAll();
+        List<Worker> workers1 = new ArrayList<Worker>();
+        List<Worker> workers2 = new ArrayList<Worker>();
+        for(int i=0;i<allWorkers.size();i++){
+            if(allWorkers.get(i).getDepartment() == 1){
+                workers1.add(allWorkers.get(i));
+                continue;
+            }
+            if(allWorkers.get(i).getDepartment() == 2){
+                workers2.add(allWorkers.get(i));
+                continue;
+            }
+        }
+        model.addAttribute("all",allWorkers);
+        model.addAttribute("w1",workers1);
+        model.addAttribute("w2",workers2);
+        model.addAttribute("rid",rid);
+        return "workerSelectList";
     }
 
     @RequestMapping("getEmailPage")

@@ -454,6 +454,14 @@
   </select>
 
 
+  <select id="selectNoDeal" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where pay_state = 1 and state = 1
+  </select>
+
+
   <update id="modPayState" parameterType="com.aclic.lottery.Models.Record">
     update record
     set pay_state = 1,

@@ -1,10 +1,12 @@
 package com.aclic.lottery.controllers;
 
+import com.aclic.lottery.Models.Admin;
 import com.aclic.lottery.Models.Record;
 import com.aclic.lottery.Models.User;
 import com.aclic.lottery.Utils.QRCodeUtil;
 import com.aclic.lottery.Utils.Utils;
 import com.aclic.lottery.services.RecordService;
+import com.aclic.lottery.services.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +27,8 @@ public class RecordController {
 
     @Autowired
     RecordService recordService;
+    @Autowired
+    WorkerService workerService;
 
     @RequestMapping("/addRecord")
     public String uploadAvatar(
@@ -165,6 +169,14 @@ public class RecordController {
         return recordService.findAllByUserid("");
     }
 
+    //查询 - 未审核 - 提交了,付钱了
+    @ResponseBody
+    @RequestMapping("/obtainRecordsNoDeal")
+    public List<Record> obtainRecordsNoDeal() {
+        return recordService.findAllNoDeal();
+    }
+
+
     //查询 - 所有 - 正在进行
     @ResponseBody
     @RequestMapping("/obtainRecordsDoing")
@@ -199,5 +211,24 @@ public class RecordController {
     @RequestMapping("/delRecordList")
     public int delRecordList(@RequestParam(value = "ids[]") List<String> ids) {
         return recordService.delRecordList(ids);
+    }
+
+    //指派
+    @ResponseBody
+    @RequestMapping("/assignTo")
+    public int assignTo(String rid , String wkid, HttpSession session) {
+        Admin admin = (Admin) session.getAttribute("USER");
+        Record one = recordService.findOne(rid);
+        one.setDealuserid(admin.getId());
+        one.setDtime(new Date());
+        one.setState(2);
+        one.setAssignuserid(wkid);
+        int modres = recordService.update(one);
+        int wkres = 0;
+        if(modres == 1){
+            //修改worker表
+            wkres = workerService.assignTodo(wkid);
+        }
+        return wkres;
     }
 }

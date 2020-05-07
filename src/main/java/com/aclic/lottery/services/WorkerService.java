@@ -25,4 +25,8 @@ public class WorkerService {
     public int addUser(Worker worker) {
         return workerMapper.insert(worker);
     }
+
+    public int assignTodo(String id) {
+        return workerMapper.assignTodo(id);
+    }
 }

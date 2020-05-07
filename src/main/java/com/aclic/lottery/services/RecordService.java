@@ -65,4 +65,12 @@ public class RecordService {
         }
         return res;
     }
+
+    public List<Record> findAllNoDeal() {
+        return recordMapper.selectNoDeal();
+    }
+
+    public int update(Record one) {
+        return recordMapper.updateByPrimaryKey(one);
+    }
 }

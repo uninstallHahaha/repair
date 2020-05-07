@@ -41,4 +41,6 @@ public interface RecordMapper {
     List<Record> selectDoneByUserid(String id);
 
     List<Record> selectDone();
+
+    List<Record> selectNoDeal();
 }

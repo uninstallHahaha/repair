@@ -25,8 +25,15 @@ function detailFormatter(index, row) {
 
 function operateFormatter_d(value, row, index) {
     return [
-        '<a class="remove" href="javascript:void(0)" title="详情">',
+        '<a class="detail" href="javascript:void(0)" title="详情">',
         '<i class="fa fa-dot-circle-o" aria-hidden="true"></i>',
+        '</a>',
+    ].join('')
+}
+function operateFormatter_a(value, row, index) {
+    return [
+        '<a class="assign" href="javascript:void(0)" title="指派">',
+        '<i class="fa fa-hand-o-right" aria-hidden="true"></i>',
         '</a>',
     ].join('')
 }
@@ -96,7 +103,30 @@ window.operateEvents = {
                 }
             }
         })
-
+    },
+    //详情
+    'click .detail': function (e, value, row, index) {
+        layer.open({
+            title: false,
+            type: 2,
+            area: ['800px', '600px'],
+            closeBtn: 1, //不显示关闭按钮
+            anim: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: '/getRecordDetailPage/'+row.id
+        });
+    },
+    //指派
+    'click .assign': function (e, value, row, index) {
+        layer.open({
+            title:false,
+            closeBtn: 1,
+            type: 2,
+            shadeClose: true,
+            shade: 0.8,
+            area: ['400px', '400px'],
+            content: '/getWorkerSelectPage/'+row.id
+        });
     }
 }
 
@@ -107,11 +137,6 @@ function initTable() {
         locale: 'zh-CN',
         columns:
             [{
-                field: '#',
-                checkbox: true,
-                align: 'center',
-                valign: 'middle'
-            }, {
                 field: 'ctime',
                 title: '申请时间',
                 align: 'center',
@@ -133,7 +158,8 @@ function initTable() {
                 field: 'rtime',
                 title: '预约时间',
                 sortable: true,
-                align: 'center'
+                align: 'center',
+                formatter: timeFormater,
             },  {
                 field: 'state',
                 title: '记录状态',
@@ -170,12 +196,12 @@ function initTable() {
                 events: window.operateEvents,
                 formatter: operateFormatter_d
             },{
-                field: 'operate_r',
-                title: '删除',
+                field: 'operate_a',
+                title: '指派',
                 align: 'center',
                 clickToSelect: false,
                 events: window.operateEvents,
-                formatter: operateFormatter_r
+                formatter: operateFormatter_a
             }
             ],
     })

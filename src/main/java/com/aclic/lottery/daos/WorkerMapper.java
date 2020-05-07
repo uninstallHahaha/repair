@@ -29,4 +29,7 @@ public interface WorkerMapper {
     int updateByPrimaryKey(Worker record);
 
     Worker selectByName(String name);
+
+    int assignTodo(String id);
+
 }
