@@ -18,6 +18,17 @@
     <script src="/js/CName.js"></script>
     <link href="/css/CPass.css" rel="stylesheet">
 
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            flex-grow: 1;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -27,17 +38,21 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">新的用户名</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control " id="newName"/>
+                    <input type="text" class="layui-input" id="newName"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" class="btn btn-default btn-primary" id="subModName">提交</button>
+                    <button type="button" class="layui-btn layui-btn-normal" id="subModName">提交</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+
+<link rel="stylesheet" href="/xgather/xlib/layui-v2.5.6/layui/css/layui.css">
+<script src="/xgather/xlib/layui-v2.5.6/layui/layui.js"></script>
 
 </body>
 </html>

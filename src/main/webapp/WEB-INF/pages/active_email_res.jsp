@@ -28,8 +28,8 @@
     <header class="main-header">
         <div class="container_header">
             <div class="logo d-flex align-items-center">
-                <a href="#"> <strong class="logo_icon"> <img src="assets/images/small-logo.png" alt=""> </strong> <span
-                        class="logo-default"> <img src="assets/images/logo2.png" alt=""> </span> </a>
+                <a href="#"> <strong class="logo_icon"> <img src="/assets/images/small-logo.png" alt=""> </strong> <span
+                        class="logo-default"> <img src="/assets/images/logo2.png" alt=""> </span> </a>
                 <div class="icon_menu full_menu">
                     <a href="#" class="menu-toggler sidebar-toggler"></a>
                 </div>
@@ -123,7 +123,7 @@
                                     <li>
                                         <ul class="dropdown-menu-list">
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -131,7 +131,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -139,7 +139,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -147,7 +147,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -155,7 +155,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -163,7 +163,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="/assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -179,7 +179,7 @@
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img
-                                        class="img-circle pro_pic" src="assets/images/about-1.jpg" alt=""> </a>
+                                        class="img-circle pro_pic" src="/assets/images/about-1.jpg" alt=""> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
                                         <a href="#"> <i class="icon-user"></i> Profile </a>
@@ -214,7 +214,7 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="/assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
@@ -341,12 +341,12 @@
 </footer>
 <!-- Footer_End -->
 </div>
-<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/js/popper.min.js"></script>
-<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="/assets/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="/assets/js/custom.js" type="text/javascript"></script>
+<script type="text/javascript" src="//assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="//assets/js/popper.min.js"></script>
+<script type="text/javascript" src="//assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="//assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="//assets/js/custom.js" type="text/javascript"></script>
 </body>
 
 </html>

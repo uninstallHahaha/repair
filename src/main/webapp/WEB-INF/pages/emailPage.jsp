@@ -21,18 +21,26 @@
         .emailInput{
             margin: 12px 0px;
         }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            flex-grow: 1;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="row clearfix">
-        <div class="col-md-12 column">
+        <div class="col-md-12 column" style="padding: 20px;">
             <h4>${curEmail}</h4>
-            <label>输入邮箱地址以更换或绑定</label>
-            <input type="email" class="form-control emailInput" id="emailInput" />
-            <button class="btn btn-default btn-primary" onclick="sendEmail()">确定</button>
-            <button class="btn btn-default" onclick="closeEmailPage()">取消</button>
+            <input type="email" class="layui-input emailInput" id="emailInput"
+            placeholder="输入邮箱地址以更换或绑定"/>
+            <button class="layui-btn layui-btn-normal" onclick="sendEmail()">确定</button>
+            <button class="layui-btn layui-btn-primary" onclick="closeEmailPage()">取消</button>
         </div>
     </div>
 </div>
@@ -67,6 +75,10 @@
         })
     }
 </script>
+
+
+<link rel="stylesheet" href="/xgather/xlib/layui-v2.5.6/layui/css/layui.css">
+<script src="/xgather/xlib/layui-v2.5.6/layui/layui.js"></script>
 
 </body>
 </html>

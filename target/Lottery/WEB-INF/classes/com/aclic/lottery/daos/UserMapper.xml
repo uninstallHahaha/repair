@@ -111,12 +111,16 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+
+
   <insert id="insert" parameterType="com.aclic.lottery.Models.User">
     insert into user (id, name, pass, 
       pic, email)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{pass,jdbcType=VARCHAR}, 
       #{pic,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
   </insert>
+
+
   <insert id="insertSelective" parameterType="com.aclic.lottery.Models.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">

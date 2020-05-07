@@ -18,6 +18,17 @@
     <script src="/js/CPass.js"></script>
     <link href="/css/CPass.css" rel="stylesheet">
 
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            flex-grow: 1;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -27,29 +38,32 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">原密码</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control " id="oldPass"/>
+                    <input type="password" class="layui-input" id="oldPass"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">新密码</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control " id="newPass"/>
+                    <input type="password" class="layui-input" id="newPass"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">确认新密码</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control " id="reNewPass"/>
+                    <input type="password" class="layui-input" id="reNewPass"/>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" class="btn btn-default btn-primary" id="subModPass">提交</button>
+                    <button type="button" class="layui-btn layui-btn-normal" id="subModPass">提交</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+<link rel="stylesheet" href="/xgather/xlib/layui-v2.5.6/layui/css/layui.css">
+<script src="/xgather/xlib/layui-v2.5.6/layui/layui.js"></script>
 
 </body>
 </html>

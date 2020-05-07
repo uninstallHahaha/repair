@@ -82,7 +82,8 @@ public class LoginController {
     @ResponseBody
     @RequestMapping("/signup")
     public Map<String, Object> signup(HttpSession session,
-                                      String name, String pass) {
+                                      String name, String pass,
+                                      String email) {
         HashMap<String, Object> map = new HashMap<>();
         User oneByName = userService.findOneByName(name);
         if (oneByName != null) {
@@ -91,6 +92,8 @@ public class LoginController {
             return map;
         }
         User user = new User(Utils.genUUID(), name, pass);
+        user.setEmail(email);
+        user.setPic("about-1.jpg");
         int addRes = userService.addUser(user);
         if (addRes == 1) {
             session.setAttribute("USER", user);

@@ -31,8 +31,9 @@ function changeAV() {
 
 function changePass() {
     layer.open({
+        title:false,
+        closeBtn: 1,
         type: 2,
-        title: '修改密码',
         shadeClose: true,
         shade: 0.8,
         area: ['400px', '400px'],
@@ -41,11 +42,12 @@ function changePass() {
 }
 function changeName() {
     layer.open({
-        type: 2,
-        title: '修改用户名',
+        title:false,
+        closeBtn: 1,
         shadeClose: true,
+        type: 2,
         shade: 0.8,
-        area: ['400px', '400px'],
+        area: ['420px', '240px'],
         content: 'getChangeNamePage'
     });
 }
@@ -86,10 +88,11 @@ $(function () {
     })
     $('#bindEmail').click(function () {
         layer.open({
-            title:'绑定邮箱',
+            title:false,
+            closeBtn: 1,
+            shadeClose: true,
             type: 2,
-            // btn: ['确定', '取消'],
-            area: ['420px', '240px'], //宽高
+            area: ['420px', '240px'],
             content: 'getEmailPage',
         });
     })
