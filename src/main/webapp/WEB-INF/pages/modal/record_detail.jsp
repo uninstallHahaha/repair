@@ -32,8 +32,14 @@
             <li id="username_i">申请时间:
                 <fmt:formatDate value="${record.ctime}" type="date"
                                 pattern="yyyy-MM-dd HH:mm:ss"/></li>
-            <li id="username_i">受理时间:${record.dtime}</li>
-            <li id="username_i">确认时间:${record.atime}</li>
+            <li id="username_i">受理时间:
+                <fmt:formatDate value="${record.dtime}" type="date"
+                                pattern="yyyy-MM-dd HH:mm:ss"/>
+            </li>
+            <li id="username_i">确认时间:
+                <fmt:formatDate value="${record.atime}" type="date"
+                                pattern="yyyy-MM-dd HH:mm:ss"/>
+            </li>
             <li id="userphone_i">受理人:${record.dealuserid}</li>
             <li id="username_i">执行人:${record.assignuserid}</li>
             <li id="userphone_i">预约报修时间:
@@ -95,7 +101,10 @@
                 <li class="layui-timeline-item">
                     <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
                     <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">${record.finishtime}</h3>
+                        <h3 class="layui-timeline-title">
+                            <fmt:formatDate value="${record.finishtime}" type="date"
+                                            pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </h3>
                         <p>
                             维修人员已在预约时间段内上门维修完成
                         </p>
@@ -106,7 +115,10 @@
                 <li class="layui-timeline-item">
                     <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
                     <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">${record.atime}</h3>
+                        <h3 class="layui-timeline-title">
+                            <fmt:formatDate value="${record.atime}" type="date"
+                                            pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </h3>
                         <p>
                             订单以被维修人员查看并确认,等待维修人员在预约时间段内上门服务
                         </p>
@@ -117,7 +129,10 @@
                 <li class="layui-timeline-item">
                     <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
                     <div class="layui-timeline-content layui-text">
-                        <h3 class="layui-timeline-title">${record.dtime}</h3>
+                        <h3 class="layui-timeline-title">
+                            <fmt:formatDate value="${record.dtime}" type="date"
+                                            pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </h3>
                         <p>
                             报修申请已由管理员查看并指派任务
                         </p>
@@ -133,7 +148,7 @@
                                             pattern="yyyy-MM-dd HH:mm:ss"/>
                         </h3>
                         <p>
-                                ${record.payState==1?'用户未能在规定时间内完成订单支付, 订单已逾期失效':'用户完成订单支付,订单状态为已支付'}
+                                ${record.payState==28?'用户未能在规定时间内完成订单支付, 订单已逾期失效':'用户完成订单支付,订单状态为已支付'}
                         </p>
                     </div>
                 </li>
