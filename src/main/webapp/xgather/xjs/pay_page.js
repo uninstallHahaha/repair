@@ -30,7 +30,7 @@ $(function () {
             success: function (res) {
                 if (res == 1) {
                     layer.msg('支付成功', function () {
-                        location.href = "/form-request.html"
+                        location.href = "/getformpage"
                     })
                 }
             }

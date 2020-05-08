@@ -30,6 +30,12 @@
         .search {
             float: left !important;
         }
+        .badge{
+            width: 20px;
+            height: 20px;
+            background: #dc3545;
+            margin-left: 6px;
+        }
     </style>
 
 </head>
@@ -131,7 +137,7 @@
 
                 <li class="menu_sub">
                     <a href="/getworkerfinishmissonpage">
-                        <i class="fa fa fa-history text-aqua"></i> <span>历史维修记录</span>
+                        <i class="fa fa fa-history text-aqua"></i> <span >历史维修记录</span>
                     </a>
                 </li>
 
@@ -274,8 +280,8 @@
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-all.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
-<link rel="stylesheet" href="/xgather/xlib/layui-v2.5.6/layui/css/layui.css">
-<script src="/xgather/xlib/layui-v2.5.6/layui/layui.js"></script>
+<%--<link rel="stylesheet" href="/xgather/xlib/layui-v2.5.6/layui/css/layui.css">--%>
+<%--<script src="/xgather/xlib/layui-v2.5.6/layui/layui.js"></script>--%>
 
 <link rel="stylesheet" href="/xgather/xcss/scroll.css">
 <link rel="stylesheet" href="/xgather/xcss/tabletool.css">

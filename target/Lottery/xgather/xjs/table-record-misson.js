@@ -131,7 +131,7 @@ window.operateEvents = {
                         values: [row.id]
                     })
                     if(document.getElementById('todobadge') == null){
-                        $('#todotxt').append('<span id="todobadge" class="layui-badge">1</span>')
+                        $('#todotxt').append('<span id="todobadge" class="badge">1</span>')
                     }else{
                         $('#todobadge').text(parseInt($('#todobadge').text())+1)
                     }
