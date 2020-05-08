@@ -7,6 +7,7 @@ import com.aclic.lottery.Utils.Utils;
 import com.aclic.lottery.services.AdminService;
 import com.aclic.lottery.services.UserService;
 import com.aclic.lottery.services.WorkerService;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -108,9 +110,9 @@ public class LoginController {
     }
 
     @RequestMapping("/logout")
-    public String logout(HttpSession session) {
+    public String logout(HttpSession session, HttpServletResponse response) throws IOException {
         session.invalidate();
-        return "redirect:login.html";
+        return "redirect:/";
     }
 
 
