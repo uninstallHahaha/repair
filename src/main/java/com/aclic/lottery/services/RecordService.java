@@ -33,7 +33,7 @@ public class RecordService {
     }
 
     public List<Record> findAllByUserid(String s) {
-        return recordMapper.selectByExample(new RecordExample());
+        return recordMapper.selectByUserId(s);
     }
 
     public List<Record> findDoingByUserid(String s) {
@@ -95,5 +95,17 @@ public class RecordService {
 
     public List<Record> findAllFinish(String wid) {
         return recordMapper.findAllFinish(wid);
+    }
+
+    public List<Record> findAllDealedByUserId(String id) {
+        return recordMapper.findAllDealedByUserId(id);
+    }
+
+    public List<Record> findAllTodoByUserId(String id) {
+        return recordMapper.findAllTodoByUserId(id);
+    }
+
+    public List<Record> findAllFinishByUserId(String id) {
+        return recordMapper.findAllFinishByUserId(id);
     }
 }

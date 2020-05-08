@@ -180,7 +180,16 @@ public class PageController {
 
     //用户
     @RequestMapping("/index")
-    public String getUserMain() {
+    public String getUserMain(HttpSession session,Model model) {
+        User user = (User)session.getAttribute("USER");
+        List<Record> allByUserid = recordService.findAllByUserid(user.getId());
+        List<Record> allDealedByUserId = recordService.findAllDealedByUserId(user.getId());
+        List<Record> allTodoByUserId = recordService.findAllTodoByUserId(user.getId());
+        List<Record> allFinishByUserId = recordService.findAllFinishByUserId(user.getId());
+        model.addAttribute("all",allByUserid.size());
+        model.addAttribute("dealed",allDealedByUserId.size());
+        model.addAttribute("todo",allTodoByUserId.size());
+        model.addAttribute("finish",allFinishByUserId.size());
         return "index";
     }
     @RequestMapping("/getformpage")

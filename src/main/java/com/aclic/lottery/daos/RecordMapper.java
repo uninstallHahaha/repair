@@ -56,4 +56,12 @@ public interface RecordMapper {
     int finishRecord(String id);
 
     List<Record> findAllFinish(String wid);
+
+    List<Record> selectByUserId(String uid);
+
+    List<Record> findAllDealedByUserId(String uid);
+
+    List<Record> findAllTodoByUserId(String uid);
+
+    List<Record> findAllFinishByUserId(String uid);
 }

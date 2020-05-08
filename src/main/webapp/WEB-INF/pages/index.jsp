@@ -270,7 +270,7 @@
 														<span class="sec_icon"><i class="fa fa-wpforms" aria-hidden="true"></i></span>
 														<div class="homepage_fl_right">
 															<h4 class="mt-0">已提交的申请</h4>
-															<h3><span class="single-count">305</span></h3>
+															<h3><span class="single-count">${all}</span></h3>
 														</div>
 														<p>
 															提交的申请总数
@@ -291,7 +291,7 @@
 														<span class="sec_icon"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
 														<div class="homepage_fl_right">
 															<h4 class="mt-0">已受理的申请</h4>
-															<h3><span class="single-count">843</span></h3>
+															<h3><span class="single-count">${dealed}</span></h3>
 														</div>
 														<p>
                                                             已经指派给维修人员
@@ -312,7 +312,7 @@
 														<span class="sec_icon"><i class="fa fa-check" aria-hidden="true"></i></span>
 														<div class="homepage_fl_right">
 															<h4 class="mt-0">已确认的申请</h4>
-															<h3><span class="single-count">1228</span></h3>
+															<h3><span class="single-count">${todo}</span></h3>
 														</div>
 														<p>
 															维修人员已确认任务
@@ -333,7 +333,7 @@
 														<span class="sec_icon"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
 														<div class="homepage_fl_right">
 															<h4 class="mt-0">已完成的申请</h4>
-															<h3><span class="single-count">+1234K</span></h3>
+															<h3><span class="single-count">${finish}</span></h3>
 														</div>
 														<p>
 															维修人员已完成维修
