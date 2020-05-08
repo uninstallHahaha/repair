@@ -448,7 +448,7 @@
                 <div class="copy_right">
                     <p>
                         2020 © Designed By
-                        <a href="http://www.bootstrapmb.com/">Aclic</a>
+                        <a href="http://www.aclic.com/">Aclic</a>
                     </p>
                 </div>
                 <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

@@ -210,7 +210,7 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="../../assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="/uploads/avatars/${sessionScope.USER.pic}" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
@@ -338,7 +338,7 @@
                 <div class="copy_right">
                     <p>
                         2020 © Designed By
-                        <a href="http://www.bootstrapmb.com/">Aclic</a>
+                        <a href="http://www.aclic.com/">Aclic</a>
                     </p>
                 </div>
                 <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

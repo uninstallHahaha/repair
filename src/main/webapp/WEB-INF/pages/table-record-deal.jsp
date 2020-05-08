@@ -227,7 +227,7 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="../../assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="/uploads/avatars/${sessionScope.USER.pic}" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
@@ -349,7 +349,7 @@
                 <div class="copy_right">
                     <p>
                         2020 © Designed By
-                        <a href="http://www.bootstrapmb.com/">Aclic</a>
+                        <a href="http://www.aclic.com/">Aclic</a>
                     </p>
                 </div>
                 <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>
@@ -394,7 +394,7 @@
 
 
 <!--	x-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/bootstrap-table.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/bootstrap-table.min.css"/><link rel="stylesheet" href="/xgather/xcss/tabletool.css">
 <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-all.min.js"></script>
