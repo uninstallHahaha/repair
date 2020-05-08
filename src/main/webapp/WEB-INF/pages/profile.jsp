@@ -262,7 +262,7 @@
         </div>
 
         <!--main contents start-->
-        <main class="content_wrapper">
+        <main class="content_wrapper" style="min-height: 500px;">
             <!--page title start-->
             <div class="page-heading">
                 <div class="container-fluid">
@@ -313,17 +313,17 @@
                             </div>
                             <div class="profile-cover__info">
                                 <ul class="nav">
-                                    <li id="changeName">
+                                    <li id="changeName" style="cursor: pointer;">
                                         <strong>
                                             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                                         </strong>修改用户名
                                     </li>
-                                    <li  id="changePass">
+                                    <li  id="changePass" style="cursor: pointer;">
                                         <strong>
                                             <i class="fa fa-key" aria-hidden="true"></i>
                                         </strong>修改密码
                                     </li>
-                                    <li id="bindEmail">
+                                    <li id="bindEmail" style="cursor: pointer;">
                                         <strong>
                                             <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
                                         </strong>修改邮箱
@@ -331,6 +331,7 @@
                                 </ul>
                             </div>
                         </div>
+                        <!--
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">消息和提醒</h3>
@@ -451,6 +452,7 @@
                                 </ul>
                             </div>
                         </div>
+                        -->
                     </div>
 
                 </div>
