@@ -128,18 +128,18 @@
 
                 <li class="menu_sub">
                     <a href="/getworkermissonpage">
-                        <i class="fa fa-file text-aqua"></i> <span>待确认报修任务</span>
+                        <i class="fa fa fa-check-square-o text-aqua"></i> <span>待确认报修任务</span>
                     </a>
                 </li>
                 <li class="menu_sub">
                     <a href="/getworkertodomissonpage">
-                        <i class="fa fa-file text-aqua"></i> <span>待执行报修任务</span>
+                        <i class="fa fa fa-tasks text-aqua"></i> <span id="todotxt">待执行报修任务</span>
                     </a>
                 </li>
 
                 <li class="menu_sub">
                     <a href="/getworkerfinishmissonpage">
-                        <i class="fa fa-file text-aqua"></i> <span>历史维修记录</span>
+                        <i class="fa fa fa-history text-aqua"></i> <span>历史维修记录</span>
                     </a>
                 </li>
 
