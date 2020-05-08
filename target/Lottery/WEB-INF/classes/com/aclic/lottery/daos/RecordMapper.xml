@@ -466,6 +466,12 @@
     from record
     where pay_state = 1 and state = 2 and assignuserid=#{wid}
   </select>
+  <select id="selectTodo" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where pay_state = 1 and state = 3 and assignuserid=#{wid}
+  </select>
 
 
 
@@ -488,12 +494,24 @@
 
   <update id="checkOkReord" parameterType="com.aclic.lottery.Models.Record">
     update record
-    set state = 3
+    set state = 3,
+    atime = now()
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
   <update id="refuseRecord" parameterType="com.aclic.lottery.Models.Record">
     update record
-    set state = 1
+    set state = 1,
+    assignuserid = null,
+    dtime = null
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <update id="finishRecord" parameterType="com.aclic.lottery.Models.Record">
+    update record
+    set state = 4,
+    finishtime = now()
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+
+
 </mapper>

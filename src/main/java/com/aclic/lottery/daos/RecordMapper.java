@@ -50,4 +50,8 @@ public interface RecordMapper {
     int checkOkReord(String id);
 
     int refuseRecord(String id);
+
+    List<Record> selectTodo(String wid);
+
+    int finishRecord(String id);
 }

@@ -239,8 +239,13 @@
             <ul id="dc_accordion" class="sidebar-menu tree">
 
                 <li class="menu_sub">
-                    <a href="/table-record-deal.html">
-                        <i class="fa fa-file text-aqua"></i> <span>报修任务</span>
+                    <a href="/getworkermissonpage">
+                        <i class="fa fa-file text-aqua"></i> <span>待确认报修任务</span>
+                    </a>
+                </li>
+                <li class="menu_sub">
+                    <a href="/getworkertodomissonpage">
+                        <i class="fa fa-file text-aqua"></i> <span>待执行报修任务</span>
                     </a>
                 </li>
 
@@ -270,7 +275,7 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">报修任务</a>
+                                        <a class="parent-item" href="index.html">待确认报修</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                 </ol>

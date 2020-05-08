@@ -6,7 +6,6 @@ import com.aclic.lottery.daos.RecordMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -84,5 +83,13 @@ public class RecordService {
 
     public int refuseRecord(String id) {
         return recordMapper.refuseRecord(id);
+    }
+
+    public List<Record> findAllTodo(String wid) {
+        return recordMapper.selectTodo(wid);
+    }
+
+    public int finishRecord(String id) {
+        return recordMapper.finishRecord(id);
     }
 }

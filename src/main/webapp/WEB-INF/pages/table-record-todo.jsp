@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>维修人员 - 报修任务</title>
+    <title>维修人员 - 待执行报修任务</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
@@ -275,7 +275,7 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">待确认报修</a>
+                                        <a class="parent-item" href="index.html">待执行报修</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                 </ol>
@@ -292,7 +292,7 @@
                         <div class="card card-shadow mb-4">
                             <div class="card-header">
                                 <div class="card-title">
-                                    待确认报修
+                                    待执行任务
                                 </div>
                             </div>
                             <div class="card-body">
@@ -320,7 +320,7 @@
                                         data-page-list="[10, 25, 50, 100, all]"
                                         data-show-footer="false"
                                         data-side-pagination="client"
-                                        data-url="/obtainRecordsDealed/${sessionScope.USER.id}"
+                                        data-url="/obtainRecordsTodo/${sessionScope.USER.id}"
                                         data-response-handler="responseHandler">
                                 </table>
                                 <!-- End bootstrap table  -->
@@ -398,7 +398,7 @@
 <link rel="stylesheet" href="/xgather/xcss/scroll.css">
 <link rel="stylesheet" href="/xgather/xcss/tabletool.css">
 <script src="/xgather/xlib/layer/layer.js"></script>
-<script src="/xgather/xjs/table-record-misson.js"></script>
+<script src="/xgather/xjs/table-record-todo.js"></script>
 </body>
 
 </html>

@@ -198,12 +198,20 @@ public class RecordController {
     }
 
 
-    //查询 - 已审核,未确认 - 维修人员待处理任务
+    //查询 - 已审核,未确认 - 维修人员待确认
     @ResponseBody
     @RequestMapping("/obtainRecordsDealed/{wid}")
     public List<Record> obtainRecordsDealed(@PathVariable String wid) {
         return recordService.findAllDealed(wid);
     }
+    //查询 - 已审核,未确认 - 维修人员待执行
+    @ResponseBody
+    @RequestMapping("/obtainRecordsTodo/{wid}")
+    public List<Record> obtainRecordsTodo(@PathVariable String wid) {
+        return recordService.findAllTodo(wid);
+    }
+
+
 
 
     //删除订单
@@ -251,6 +259,15 @@ public class RecordController {
     @RequestMapping("/refuseRecord")
     public int refuseRecord(String id, HttpSession session) {
         int wkres = recordService.refuseRecord(id);
+        return wkres;
+    }
+
+
+    //完成指派
+    @ResponseBody
+    @RequestMapping("/finishRecord")
+    public int finishRecord(String id, HttpSession session) {
+        int wkres = recordService.finishRecord(id);
         return wkres;
     }
 
