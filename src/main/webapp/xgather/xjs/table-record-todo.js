@@ -123,6 +123,11 @@ window.operateEvents = {
                         field: 'id',
                         values: [row.id]
                     })
+                    if(document.getElementById('todobadge') == null){
+                        $('#finishtxt').append('<span id="todobadge" class="layui-badge">1</span>')
+                    }else{
+                        $('#todobadge').text(parseInt($('#todobadge').text())+1)
+                    }
                     layer.msg('提交成功')
                 } else {
                     layer.msg('提交失败')

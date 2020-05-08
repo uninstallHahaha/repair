@@ -71,121 +71,10 @@
                         <div class="right_bar_top d-flex align-items-center">
 
                             <!-- notification_Start -->
-                            <div class="dropdown dropdown-notification">
-                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
-                                   data-hover="dropdown" data-close-others="true" aria-expanded="false"> <i
-                                        class="fa fa-bell-o"></i> <span class="badge_coun"> 6 </span> </a>
-                                <ul class="dropdown-menu scroll_auto height_fixed">
-                                    <li class="bigger">
-                                        <h3><span class="bold">Notifications</span></h3>
-                                        <span class="notification-label">New 6</span>
-                                    </li>
-                                    <li>
-                                        <ul class="dropdown-menu-list">
-                                            <li>
-                                                <a href="javascript:;"> <span class="time">just now</span> <span
-                                                        class="details"> <span
-                                                        class="notification-icon deepPink-bgcolor"> <i
-                                                        class="fa fa-check"></i> </span> Congratulations!. </span> </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;"> <span class="time">3 mins</span> <span
-                                                        class="details"> <span class="notification-icon purple-bgcolor"> <i
-                                                        class="fa fa-user o"></i> </span> <b>John Micle </b>is now following you. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;"> <span class="time">7 mins</span> <span
-                                                        class="details"> <span
-                                                        class="notification-icon blue-bgcolor"> <i
-                                                        class="fa fa-comments-o"></i> </span> <b>Sneha Jogi </b>sent you a message. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;"> <span class="time">12 mins</span> <span
-                                                        class="details"> <span class="notification-icon pink"> <i
-                                                        class="fa fa-heart"></i> </span> <b>Ravi Patel </b>like your photo. </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;"> <span class="time">15 mins</span> <span
-                                                        class="details"> <span class="notification-icon yellow"> <i
-                                                        class="fa fa-warning"></i> </span> Warning! </span> </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:;"> <span class="time">10 hrs</span> <span
-                                                        class="details"> <span class="notification-icon red"> <i
-                                                        class="fa fa-times"></i> </span> Application error. </span> </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+
                             <!-- notification_End -->
                             <!-- DropDown_Inbox -->
-                            <div class="dropdown dropdown-inbox">
-                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
-                                   data-hover="dropdown" data-close-others="true"> <i class="fa fa-envelope-o"></i>
-                                    <span class="badge_coun"> 2 </span> </a>
-                                <ul class="dropdown-menu scroll_auto height_fixed">
-                                    <li class="bigger">
-                                        <h3><span class="bold">Messages</span></h3>
-                                        <span class="notification-label">New 2</span>
-                                    </li>
-                                    <li>
-                                        <ul class="dropdown-menu-list">
-                                            <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
-                                                                                       class="img-circle"
-                                                                                       alt=""> </span> <span
-                                                        class="subject"> <span class="from"> Sarah Smith </span> <span
-                                                        class="time">Just Now </span> </span> <span class="message"> Jatin I found you on LinkedIn... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
-                                                                                       class="img-circle"
-                                                                                       alt=""> </span> <span
-                                                        class="subject"> <span class="from"> Sarah Smith </span> <span
-                                                        class="time">Just Now </span> </span> <span class="message"> Jatin I found you on LinkedIn... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
-                                                                                       class="img-circle"
-                                                                                       alt=""> </span> <span
-                                                        class="subject"> <span class="from"> Sarah Smith </span> <span
-                                                        class="time">Just Now </span> </span> <span class="message"> Jatin I found you on LinkedIn... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
-                                                                                       class="img-circle"
-                                                                                       alt=""> </span> <span
-                                                        class="subject"> <span class="from"> Sarah Smith </span> <span
-                                                        class="time">Just Now </span> </span> <span class="message"> Jatin I found you on LinkedIn... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
-                                                                                       class="img-circle"
-                                                                                       alt=""> </span> <span
-                                                        class="subject"> <span class="from"> Sarah Smith </span> <span
-                                                        class="time">Just Now </span> </span> <span class="message"> Jatin I found you on LinkedIn... </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
-                                                                                       class="img-circle"
-                                                                                       alt=""> </span> <span
-                                                        class="subject"> <span class="from"> Sarah Smith </span> <span
-                                                        class="time">Just Now </span> </span> <span class="message"> Jatin I found you on LinkedIn... </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+
                             <!--DropDown_Inbox_End -->
                             <!-- Dropdown_User -->
                             <div class="dropdown dropdown-user">
@@ -226,11 +115,11 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="/uploads/avatars/${sessionScope.USER.pic}" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
-                        Alexander Pierce
+                        ${sessionScope.USER.name}
                     </p>
                     <a href="#"> <i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -245,7 +134,7 @@
                 </li>
                 <li class="menu_sub">
                     <a href="/getworkertodomissonpage">
-                        <i class="fa fa-file text-aqua"></i> <span>待执行报修任务</span>
+                        <i class="fa fa-file text-aqua"></i> <span id="todotxt">待执行报修任务</span>
                     </a>
                 </li>
 
@@ -394,6 +283,8 @@
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-all.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
 
+<link rel="stylesheet" href="/xgather/xlib/layui-v2.5.6/layui/css/layui.css">
+<script src="/xgather/xlib/layui-v2.5.6/layui/layui.js"></script>
 
 <link rel="stylesheet" href="/xgather/xcss/scroll.css">
 <link rel="stylesheet" href="/xgather/xcss/tabletool.css">

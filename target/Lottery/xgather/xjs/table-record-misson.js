@@ -130,6 +130,11 @@ window.operateEvents = {
                         field: 'id',
                         values: [row.id]
                     })
+                    if(document.getElementById('todobadge') == null){
+                        $('#todotxt').append('<span id="todobadge" class="layui-badge">1</span>')
+                    }else{
+                        $('#todobadge').text(parseInt($('#todobadge').text())+1)
+                    }
                     layer.msg('确认成功')
                 } else {
                     layer.msg('确认失败')
