@@ -76,7 +76,7 @@
 
 
 
-                            -->  <!-- Dropdown_User -->
+                             <!-- Dropdown_User -->
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img class="img-circle pro_pic" src="/uploads/avatars/${sessionScope.USER.pic}" alt=""> </a>
