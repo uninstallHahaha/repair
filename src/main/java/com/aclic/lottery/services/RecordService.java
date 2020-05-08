@@ -73,4 +73,16 @@ public class RecordService {
     public int update(Record one) {
         return recordMapper.updateByPrimaryKey(one);
     }
+
+    public List<Record> findAllDealed(String wid) {
+        return recordMapper.selectDealed(wid);
+    }
+
+    public int checkOkRecord(String id) {
+        return recordMapper.checkOkReord(id);
+    }
+
+    public int refuseRecord(String id) {
+        return recordMapper.refuseRecord(id);
+    }
 }

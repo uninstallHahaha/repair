@@ -43,4 +43,11 @@ public interface RecordMapper {
     List<Record> selectDone();
 
     List<Record> selectNoDeal();
+
+    List<Record> selectDealed(String wid);
+
+
+    int checkOkReord(String id);
+
+    int refuseRecord(String id);
 }

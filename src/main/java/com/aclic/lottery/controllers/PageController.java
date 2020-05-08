@@ -170,4 +170,10 @@ public class PageController {
     public String getaddworkerpage() {//✔
         return "addWorker";
     }
+
+
+    @RequestMapping("/getworkermissonpage")
+    public String getworkermissonpage() {//✔
+        return "table-record-misson";
+    }
 }

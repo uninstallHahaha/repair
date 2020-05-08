@@ -44,7 +44,7 @@ $(function () {
                data: {name: name, pass: pass, mem: mem},
                success: function (res) {
                    if (res.stat == 1) {
-                           location.href = "/worker"
+                           location.href = "/getworkermissonpage"
                    } else {
                        layer.msg(res.data)
                    }

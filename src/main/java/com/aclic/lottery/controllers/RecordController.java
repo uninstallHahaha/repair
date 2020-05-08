@@ -10,10 +10,7 @@ import com.aclic.lottery.services.WorkerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -191,12 +188,21 @@ public class RecordController {
     public List<Record> obtainRecordsDone(String id) {
         return recordService.findDone();
     }
+
     //查询 - 所有 - 已完成 - 用户
     @ResponseBody
     @RequestMapping("/obtainRecordsDoneByUserId")
     public List<Record> obtainRecordsDoneByUserId(HttpSession session) {
-        User user = (User)session.getAttribute("USER");
+        User user = (User) session.getAttribute("USER");
         return recordService.findDoneByUserid(user.getId());
+    }
+
+
+    //查询 - 已审核,未确认 - 维修人员待处理任务
+    @ResponseBody
+    @RequestMapping("/obtainRecordsDealed/{wid}")
+    public List<Record> obtainRecordsDealed(@PathVariable String wid) {
+        return recordService.findAllDealed(wid);
     }
 
 
@@ -216,7 +222,7 @@ public class RecordController {
     //指派
     @ResponseBody
     @RequestMapping("/assignTo")
-    public int assignTo(String rid , String wkid, HttpSession session) {
+    public int assignTo(String rid, String wkid, HttpSession session) {
         Admin admin = (Admin) session.getAttribute("USER");
         Record one = recordService.findOne(rid);
         one.setDealuserid(admin.getId());
@@ -225,10 +231,28 @@ public class RecordController {
         one.setAssignuserid(wkid);
         int modres = recordService.update(one);
         int wkres = 0;
-        if(modres == 1){
+        if (modres == 1) {
             //修改worker表
             wkres = workerService.assignTodo(wkid);
         }
         return wkres;
     }
+
+
+    //确认指派
+    @ResponseBody
+    @RequestMapping("/checkOkRecord")
+    public int checkOkRecord(String id, HttpSession session) {
+        int wkres = recordService.checkOkRecord(id);
+        return wkres;
+    }
+    //拒绝指派
+    @ResponseBody
+    @RequestMapping("/refuseRecord")
+    public int refuseRecord(String id, HttpSession session) {
+        int wkres = recordService.refuseRecord(id);
+        return wkres;
+    }
+
+
 }
