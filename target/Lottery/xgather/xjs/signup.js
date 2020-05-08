@@ -27,7 +27,7 @@ $(function () {
             success: function (res) {
                 if (res.stat == 1) {
                     layer.msg('注册成功,已为您自动登录', function () {
-                        location.href = "/"
+                        location.href = "/index"
                     })
                 } else {
                     layer.msg(res.data)
