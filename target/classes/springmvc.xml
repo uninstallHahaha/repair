@@ -32,4 +32,14 @@
 
     <!-- 开启springmvc框架注解支持(配置默认的处理器映射器和处理器适配器) -->
     <mvc:annotation-driven/>
+
+    <mvc:interceptors>
+        <!--多个拦截器配置多个此标签, 会链式执行拦截器方法-->
+        <mvc:interceptor>
+            <!--配置要拦截的路径-->
+            <mvc:mapping path="/**"/>
+            <!--配置用哪个拦截器拦截-->
+            <bean class="com.aclic.lottery.Utils.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

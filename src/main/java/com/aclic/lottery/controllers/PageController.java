@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -32,69 +31,58 @@ public class PageController {
     UserService userService;
 
     @RequestMapping("/gettopaypage/{rid}")//
-    public String gettopaypage(@PathVariable String rid, Model model){
-        model.addAttribute("rid",rid);
-        if(rid != null){
+    public String gettopaypage(@PathVariable String rid, Model model) {
+        model.addAttribute("rid", rid);
+        if (rid != null) {
             //支付款项
-            model.addAttribute("price",recordService.findOne(rid).getPayPrice());
-        }else{
-            model.addAttribute("price",30);
+            model.addAttribute("price", recordService.findOne(rid).getPayPrice());
+        } else {
+            model.addAttribute("price", 30);
         }
         return "check_pay";
     }
 
 
     @RequestMapping("/getRecordDetailPage/{rid}")//
-    public String getRecordDetailPage(@PathVariable String rid, Model model){
-        model.addAttribute("record",recordService.findOne(rid));
+    public String getRecordDetailPage(@PathVariable String rid, Model model) {
+        model.addAttribute("record", recordService.findOne(rid));
         return "modal/record_detail";
     }
 
     @RequestMapping("/getCommentPage/{rid}")//
-    public String getCommentPage(@PathVariable String rid, Model model){
+    public String getCommentPage(@PathVariable String rid, Model model) {
         Comment one = commentService.findOne(rid);
-        if(one  == null){
+        if (one == null) {
             one = new Comment();
             one.setStar(0);
             one.setId(null);
             one.setComment("");
         }
-        model.addAttribute("comment",one);
-        model.addAttribute("rid",rid);
+        model.addAttribute("comment", one);
+        model.addAttribute("rid", rid);
         return "modal/record_comment";
     }
 
 
-
     @RequestMapping("/getSearchPage/{rid}")//
-    public String getSearchPage(@PathVariable String rid, Model model){
+    public String getSearchPage(@PathVariable String rid, Model model) {
         Record one = new Record();
-        if(rid != "alice"){
+        if (rid != "alice") {
             one = recordService.findOne(rid);
-            if(one  == null){
+            if (one == null) {
                 one = new Record();
             }
-            model.addAttribute("rid",rid);
-        }else{
-            model.addAttribute("rid","");
+            model.addAttribute("rid", rid);
+        } else {
+            model.addAttribute("rid", "");
         }
-        model.addAttribute("comment",one);
+        model.addAttribute("comment", one);
         return "record_search";
     }
 
-    @RequestMapping("/loginpage")
-    public String getloginpage(){
-        return "page-login";
-    }
-
-
-    @RequestMapping("/signuppage")
-    public String getsignuppage(){
-        return "page-signup";
-    }
 
     @RequestMapping("/profilepage")
-    public String getprofilepage(){
+    public String getprofilepage() {
         return "profile";
     }
 
@@ -108,6 +96,7 @@ public class PageController {
     public String getChangePassPage() {//✔
         return "CPass";
     }
+
     //show change password
     @RequestMapping("/getChangeNamePage")
     public String getChangeNamePage() {//✔
@@ -121,20 +110,20 @@ public class PageController {
         List<Worker> allWorkers = workerService.findAll();
         List<Worker> workers1 = new ArrayList<Worker>();
         List<Worker> workers2 = new ArrayList<Worker>();
-        for(int i=0;i<allWorkers.size();i++){
-            if(allWorkers.get(i).getDepartment() == 1){
+        for (int i = 0; i < allWorkers.size(); i++) {
+            if (allWorkers.get(i).getDepartment() == 1) {
                 workers1.add(allWorkers.get(i));
                 continue;
             }
-            if(allWorkers.get(i).getDepartment() == 2){
+            if (allWorkers.get(i).getDepartment() == 2) {
                 workers2.add(allWorkers.get(i));
                 continue;
             }
         }
-        model.addAttribute("all",allWorkers);
-        model.addAttribute("w1",workers1);
-        model.addAttribute("w2",workers2);
-        model.addAttribute("rid",rid);
+        model.addAttribute("all", allWorkers);
+        model.addAttribute("w1", workers1);
+        model.addAttribute("w2", workers2);
+        model.addAttribute("rid", rid);
         return "workerSelectList";
     }
 
@@ -155,12 +144,13 @@ public class PageController {
 
     @RequestMapping("/userlistpage")
     public String userlistpage(Model model) {//✔
-        model.addAttribute("users",userService.findAll());
+        model.addAttribute("users", userService.findAll());
         return "lists-user";
     }
+
     @RequestMapping("/workerlistpage")
     public String workerlistpage(Model model) {//✔
-        model.addAttribute("workers",workerService.findAll());
+        model.addAttribute("workers", workerService.findAll());
         return "lists-worker";
     }
 
@@ -171,17 +161,25 @@ public class PageController {
         return "addWorker";
     }
 
-
+    //维修人员
     @RequestMapping("/getworkermissonpage")
     public String getworkermissonpage() {//✔
         return "table-record-misson";
     }
+
     @RequestMapping("/getworkertodomissonpage")
     public String getworkertodomissonpage() {
         return "table-record-todo";
     }
+
     @RequestMapping("/getworkerfinishmissonpage")
     public String getworkerfinishmissonpage() {
         return "table-record-finish";
+    }
+
+
+    @RequestMapping("/getformpage")
+    public String getformpage() {
+        return "form-request";
     }
 }
