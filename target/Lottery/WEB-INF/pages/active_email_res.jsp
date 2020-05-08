@@ -58,8 +58,8 @@
                     <div class="col-xl-7 col-9 d-flex justify-content-end">
                         <div class="right_bar_top d-flex align-items-center">
 
-                            <!-- notification_Start -->
-                            <div class="dropdown dropdown-notification">
+
+                            <!--   <div class="dropdown dropdown-notification">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="false"> <i
                                         class="fa fa-bell-o"></i> <span class="badge_coun"> 6 </span> </a>
@@ -109,8 +109,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- notification_End -->
-                            <!-- DropDown_Inbox -->
+
+
                             <div class="dropdown dropdown-inbox">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true"> <i class="fa fa-envelope-o"></i>
@@ -174,8 +174,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!--DropDown_Inbox_End -->
-                            <!-- Dropdown_User -->
+
+                            -->  <!-- Dropdown_User -->
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img
@@ -218,7 +218,7 @@
                 </div>
                 <div class="info">
                     <p>
-                        Alexander Pierce
+                        ${sessionScope.USER.name}
                     </p>
                     <a href="#"> <i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -227,35 +227,44 @@
             <ul id="dc_accordion" class="sidebar-menu tree">
 
                 <li class="menu_sub">
-                    <a href="./index.html"> <i class="fa fa-file text-aqua"></i> <span>首页</span>
-
+                    <a href="/index">
+                        <i class="icon-grid text-aqua"></i> <span>首页</span>
                     </a>
                 </li>
 
                 <li class="menu_sub">
-                    <a href="./form-request.html"> <i class="fa fa-file text-aqua"></i> <span>报修申请</span>
+                    <a href="/getformpage">
+                        <i class="fa fa fa-newspaper-o text-aqua"></i> <span>报修申请</span>
+                    </a>
+                </li>
 
+                <li class="menu_sub dcjq-parent-li">
+                    <a href="#" class="dcjq-parent">
+                        <i class="fa fa fa-calendar text-aqua"></i>
+                        <span>报修记录</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="down_menu" style="display: block;">
+                        <li>
+                            <a href="/getRecordDoingPage">正在进行的订单</a>
+                        </li>
+                        <li>
+                            <a href="/getRecordDonePage">已完成订单</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu_sub">
+                    <a href="/getSearchPage/alice">
+                        <i class="fa fa-search text-aqua"></i> <span>报修查询</span>
                     </a>
                 </li>
 
                 <li class="menu_sub">
-                    <a href="./table-record.html"> <i class="fa fa-file text-aqua"></i> <span>报修记录</span>
-
+                    <a href="/profilepage">
+                        <i class="fa fa fa-home text-aqua"></i> <span>个人中心</span>
                     </a>
                 </li>
-
-                <li class="menu_sub">
-                    <a href="#"> <i class="fa fa-file text-aqua"></i> <span>报修查询</span>
-
-                    </a>
-                </li>
-
-                <li class="menu_sub">
-                    <a href="./profile.profile.jsp"> <i class="fa fa-file text-aqua"></i> <span>个人中心</span>
-
-                    </a>
-                </li>
-
             </ul>
         </div>
 
@@ -331,8 +340,8 @@
         <div class="col-md-12 text-center">
             <div class="copy_right">
                 <p>
-                    2018 © Dashboard Theme By
-                    <a href="http://www.bootstrapmb.com/">Poliset</a>
+                    2020 © Designed By
+                    <a href="http://www.bootstrapmb.com/">Aclic</a>
                 </p>
             </div>
             <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

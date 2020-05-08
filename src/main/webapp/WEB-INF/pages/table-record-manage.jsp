@@ -168,7 +168,7 @@
 						</div>
 						<div class="info">
 							<p>
-								Alexander Pierce
+								${sessionScope.USER.name}
 							</p>
 							<a href="#"> <i class="fa fa-circle text-success"></i> Online</a>
 						</div>
@@ -288,8 +288,8 @@
 					<div class="col-md-12 text-center">
 						<div class="copy_right">
 							<p>
-								2018 © Dashboard Theme By
-								<a href="http://www.bootstrapmb.com/">Poliset</a>
+								2020 © Designed By
+								<a href="http://www.bootstrapmb.com/">Aclic</a>
 							</p>
 						</div>
 						<a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

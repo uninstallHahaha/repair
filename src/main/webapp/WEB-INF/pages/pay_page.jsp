@@ -178,8 +178,7 @@
                             -->  <!-- Dropdown_User -->
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
-                                   data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img
-                                        class="img-circle pro_pic" src="assets/images/about-1.jpg" alt=""> </a>
+                                   data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img class="img-circle pro_pic" src="/uploads/avatars/${sessionScope.USER.pic}" alt=""> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
                                         <a href="#"> <i class="icon-user"></i> Profile </a>
@@ -214,11 +213,11 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="/uploads/avatars/${sessionScope.USER.pic}" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
-                        Alexander Pierce
+                        ${sessionScope.USER.name}
                     </p>
                     <a href="#"> <i class="fa fa-circle text-success"></i> Online</a>
                 </div>

@@ -70,17 +70,16 @@
                     <div class="col-xl-7 col-9 d-flex justify-content-end">
                         <div class="right_bar_top d-flex align-items-center">
 
-                            <!-- notification_Start -->
 
-                            <!-- notification_End -->
-                            <!-- DropDown_Inbox -->
 
-                            <!--DropDown_Inbox_End -->
-                            <!-- Dropdown_User -->
+
+
+
+
+                            -->  <!-- Dropdown_User -->
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
-                                   data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img
-                                        class="img-circle pro_pic" src="assets/images/about-1.jpg" alt=""> </a>
+                                   data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img class="img-circle pro_pic" src="/uploads/avatars/${sessionScope.USER.pic}" alt=""> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
                                         <a href="#"> <i class="icon-user"></i> Profile </a>
@@ -231,8 +230,8 @@
             <div class="col-md-12 text-center">
                 <div class="copy_right">
                     <p>
-                        2018 © Dashboard Theme By
-                        <a href="http://www.bootstrapmb.com/">Poliset</a>
+                        2020 © Designed By
+                        <a href="http://www.bootstrapmb.com/">Aclic</a>
                     </p>
                 </div>
                 <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>
