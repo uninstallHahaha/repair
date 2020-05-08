@@ -30,21 +30,6 @@ function operateFormatter_d(value, row, index) {
         '</a>',
     ].join('')
 }
-function operateFormatter_c(value, row, index) {
-    if(row.payState == 28){
-        return  [
-            '<a class="ban" href="javascript:void(0)" title="该记录为逾期未支付而失效记录,无法使用评价功能">',
-            '<i class="fa fa-ban" aria-hidden="true"></i>',
-            '</a>',
-        ].join('')
-    }
-    return [
-        '<a class="comment" href="javascript:void(0)" title="评价">',
-        '<i class="fa fa-commenting" aria-hidden="true"></i>',
-        '</a>',
-    ].join('')
-}
-
 function operateFormatter_r(value, row, index) {
     return [
         '<a class="remove" href="javascript:void(0)" title="删除">',
@@ -52,6 +37,22 @@ function operateFormatter_r(value, row, index) {
         '</a>',
     ].join('')
 }
+function operateFormatter_c(value, row, index) {
+    return [
+        '<a class="check" href="javascript:void(0)" title="确认">',
+        '<i class="fa fa-check" aria-hidden="true"></i>',
+        '</a>',
+    ].join('')
+}
+function operateFormatter_n(value, row, index) {
+    return [
+        '<a class="refuse" href="javascript:void(0)" title="拒绝">',
+        '<i class="fa fa-hand-stop-o" aria-hidden="true"></i>',
+        '</a>',
+    ].join('')
+}
+
+
 
 function timeFormater(value, row, index) {
     var now = new Date(value);
@@ -123,19 +124,46 @@ window.operateEvents = {
             content: '/getRecordDetailPage/'+row.id
         });
     },
-    //评价
-    'click .comment': function (e, value, row, index) {
-        layer.open({
-            title: false,
-            type: 2,
-            area: ['800px', '300px'],
-            closeBtn: 1, //不显示关闭按钮
-            anim: 2,
-            shadeClose: true, //开启遮罩关闭
-            content: '/getCommentPage/'+row.id
-        });
+    //确认
+    'click .check': function (e, value, row, index) {
+        $.ajax({
+            url: '/checkOkRecord',
+            data: {'id': row.id},
+            method: 'post',
+            async: false,
+            success: function (res) {
+                if (res == 1) {
+                    $table.bootstrapTable('remove', {
+                        field: 'id',
+                        values: [row.id]
+                    })
+                    layer.msg('确认成功')
+                } else {
+                    layer.msg('确认失败')
+                }
+            }
+        })
     },
-
+    //拒绝
+    'click .refuse': function (e, value, row, index) {
+        $.ajax({
+            url: '/refuseRecord',
+            data: {'id': row.id},
+            method: 'post',
+            async: false,
+            success: function (res) {
+                if (res == 1) {
+                    $table.bootstrapTable('remove', {
+                        field: 'id',
+                        values: [row.id]
+                    })
+                    layer.msg('拒绝成功')
+                } else {
+                    layer.msg('拒绝失败')
+                }
+            }
+        })
+    }
 }
 
 
@@ -145,11 +173,6 @@ function initTable() {
         locale: 'zh-CN',
         columns:
             [{
-                field: '#',
-                checkbox: true,
-                align: 'center',
-                valign: 'middle'
-            }, {
                 field: 'ctime',
                 title: '申请时间',
                 align: 'center',
@@ -174,11 +197,23 @@ function initTable() {
                 align: 'center',
                 formatter: timeFormater,
             },  {
-                field: 'state',
-                title: '记录状态',
+                field: 'dtime',
+                title: '指派时间',
                 sortable: true,
                 align: 'center',
-                formatter: stateFormater
+                formatter: timeFormater,
+            },  {
+                field: 'atime',
+                title: '确认时间',
+                sortable: true,
+                align: 'center',
+                formatter: timeFormater,
+            },  {
+                field: 'finishtime',
+                title: '完成时间',
+                sortable: true,
+                align: 'center',
+                formatter: timeFormater,
             },  {
                 field: 'type',
                 title: '报修类型',
@@ -190,17 +225,6 @@ function initTable() {
                 title: '地点',
                 sortable: true,
                 align: 'center',
-            }, {
-                field: 'payState',
-                title: '支付状态',
-                sortable: true,
-                align: 'center',
-                formatter:paystateFormater
-            }, {
-                field: 'payPrice',
-                title: '订单款项',
-                sortable: true,
-                align: 'center'
             },{
                 field: 'operate_d',
                 title: '详情',
@@ -234,7 +258,7 @@ function initTable() {
     $remove.click(function () {
         var ids = getIdSelections()
         $.ajax({
-            url: '/delRecordList',
+            url: '/delLogList',
             data: {'ids': ids},
             async: false,
             success: function (res) {

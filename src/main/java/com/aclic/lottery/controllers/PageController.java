@@ -180,4 +180,8 @@ public class PageController {
     public String getworkertodomissonpage() {
         return "table-record-todo";
     }
+    @RequestMapping("/getworkerfinishmissonpage")
+    public String getworkerfinishmissonpage() {
+        return "table-record-finish";
+    }
 }

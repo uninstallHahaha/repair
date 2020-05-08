@@ -210,6 +210,12 @@ public class RecordController {
     public List<Record> obtainRecordsTodo(@PathVariable String wid) {
         return recordService.findAllTodo(wid);
     }
+    //查询 - 已审核,未确认 - 维修人员维修记录
+    @ResponseBody
+    @RequestMapping("/obtainRecordsFinish/{wid}")
+    public List<Record> obtainRecordsFinish(@PathVariable String wid) {
+        return recordService.findAllFinish(wid);
+    }
 
 
 

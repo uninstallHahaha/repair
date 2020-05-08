@@ -110,7 +110,6 @@ window.operateEvents = {
                 }
             }
         })
-
     },
     //详情
     'click .detail': function (e, value, row, index) {

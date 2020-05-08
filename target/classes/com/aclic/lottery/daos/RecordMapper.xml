@@ -472,6 +472,13 @@
     from record
     where pay_state = 1 and state = 3 and assignuserid=#{wid}
   </select>
+  <select id="findAllFinish" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where  state = 4 and assignuserid=#{wid}
+  </select>
+
 
 
 

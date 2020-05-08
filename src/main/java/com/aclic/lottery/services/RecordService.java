@@ -92,4 +92,8 @@ public class RecordService {
     public int finishRecord(String id) {
         return recordMapper.finishRecord(id);
     }
+
+    public List<Record> findAllFinish(String wid) {
+        return recordMapper.findAllFinish(wid);
+    }
 }

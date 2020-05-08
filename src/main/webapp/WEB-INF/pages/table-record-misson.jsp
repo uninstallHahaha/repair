@@ -250,7 +250,7 @@
                 </li>
 
                 <li class="menu_sub">
-                    <a href="/table-record-manage.html">
+                    <a href="/getworkerfinishmissonpage">
                         <i class="fa fa-file text-aqua"></i> <span>历史维修记录</span>
                     </a>
                 </li>

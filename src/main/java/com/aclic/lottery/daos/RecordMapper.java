@@ -54,4 +54,6 @@ public interface RecordMapper {
     List<Record> selectTodo(String wid);
 
     int finishRecord(String id);
+
+    List<Record> findAllFinish(String wid);
 }
