@@ -36,7 +36,7 @@ public interface RecordMapper {
     //支付逾期
     int updatePayStateTo28(String id);
 
-    List<Record> selectDoingByUserid(String s);
+    List<Record> selectDoingByUserid(String id);
 
     List<Record> selectDoneByUserid(String id);
 

@@ -436,7 +436,7 @@
     select
     *
     from record
-    where pay_state != 28 and state != 4
+    where pay_state != 28 and state != 4 and subuserid=#{id}
   </select>
 
   <select id="selectDoneByUserid" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">

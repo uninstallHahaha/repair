@@ -436,7 +436,7 @@
     select
     *
     from record
-    where pay_state != 28 and state != 4
+    where pay_state != 28 and state != 4 and subuserid=#{id}
   </select>
 
   <select id="selectDoneByUserid" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
@@ -479,6 +479,37 @@
     where  state = 4 and assignuserid=#{wid}
   </select>
 
+
+  <select id="selectByUserId" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where  subuserid=#{uid}
+  </select>
+
+
+
+  <select id="findAllDealedByUserId" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where  subuserid=#{uid} and state=2
+  </select>
+
+  <select id="findAllTodoByUserId" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where  subuserid=#{uid} and state=3
+  </select>
+
+
+  <select id="findAllFinishByUserId" parameterType="com.aclic.lottery.Models.RecordExample" resultMap="BaseResultMap">
+    select
+    *
+    from record
+    where  subuserid=#{uid} and state=4
+  </select>
 
 
 

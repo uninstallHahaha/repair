@@ -71,8 +71,8 @@
                     <div class="col-xl-7 col-9 d-flex justify-content-end">
                         <div class="right_bar_top d-flex align-items-center">
 
-                            <!-- notification_Start -->
-                            <div class="dropdown dropdown-notification">
+
+                            <!--   <div class="dropdown dropdown-notification">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="false"> <i
                                         class="fa fa-bell-o"></i> <span class="badge_coun"> 6 </span> </a>
@@ -122,8 +122,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- notification_End -->
-                            <!-- DropDown_Inbox -->
+
+
                             <div class="dropdown dropdown-inbox">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true"> <i class="fa fa-envelope-o"></i>
@@ -187,8 +187,8 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!--DropDown_Inbox_End -->
-                            <!-- Dropdown_User -->
+
+                            -->  <!-- Dropdown_User -->
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img

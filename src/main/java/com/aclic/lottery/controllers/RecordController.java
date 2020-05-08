@@ -27,8 +27,9 @@ public class RecordController {
     @Autowired
     WorkerService workerService;
 
+    //提交申请
     @RequestMapping("/addRecord")
-    public String uploadAvatar(
+    public String uploadAvatar(HttpSession session,
             Model model,
             HttpServletRequest request, MultipartFile pic,
             String place,
@@ -59,6 +60,7 @@ public class RecordController {
         }
 
         //记录入库
+        User user = (User)session.getAttribute("USER");
         int pay = 0;
         switch (type) {
             case 1:
@@ -83,7 +85,7 @@ public class RecordController {
         record.setPayPrice(pay);
         record.setPic(filename);
         record.setPayState(0);
-        record.setSubuserid(Utils.genUUID());
+        record.setSubuserid(user.getId());
         record.setUsername(username);
         record.setUserphone(userphone);
         record.setWhereRepair(place);
@@ -158,15 +160,14 @@ public class RecordController {
     }
 
 
-    //查询 - 所有
+    //查询 - 所有 -de
     @ResponseBody
     @RequestMapping("/obtainRecords")
     public List<Record> obtainRecords(String id) {
-        //TODO 用户模块需修改
         return recordService.findAllByUserid("");
     }
 
-    //查询 - 未审核 - 提交了,付钱了
+    //查询 - 未审核 - 提交了,付钱了 - 管理员
     @ResponseBody
     @RequestMapping("/obtainRecordsNoDeal")
     public List<Record> obtainRecordsNoDeal() {
@@ -174,15 +175,15 @@ public class RecordController {
     }
 
 
-    //查询 - 所有 - 正在进行
+    //查询 - 所有 - 正在进行 - 用户
     @ResponseBody
     @RequestMapping("/obtainRecordsDoing")
-    public List<Record> obtainRecordsDoing(String id) {
-        //TODO 用户模块需修改
-        return recordService.findDoingByUserid("");
+    public List<Record> obtainRecordsDoing(HttpSession session) {
+        User user = (User) session.getAttribute("USER");
+        return recordService.findDoingByUserid(user.getId());
     }
 
-    //查询 - 所有 - 已完成
+    //查询 - 所有 - 已完成 - 管理员
     @ResponseBody
     @RequestMapping("/obtainRecordsDone")
     public List<Record> obtainRecordsDone(String id) {
