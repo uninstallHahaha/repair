@@ -17,9 +17,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         if(request.getRequestURI().contains(".") && !request.getRequestURI().endsWith("html")){
             return true;
         }
-        //login
+
+        //login-check
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("USER");
+        Object user = session.getAttribute("USER");
         if(null == user){
             response.sendRedirect("/page-login.html");
             return false;

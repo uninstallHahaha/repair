@@ -248,10 +248,10 @@
                     </a>
                     <ul class="down_menu" style="display: block;">
                         <li>
-                            <a href="/table-record-doing.html">正在进行的订单</a>
+                            <a href="/WEB-INF/pages/table-record-doing.html">正在进行的订单</a>
                         </li>
                         <li>
-                            <a href="/table-record-done.html">已完成订单</a>
+                            <a href="/WEB-INF/pages/table-record-done.html">已完成订单</a>
                         </li>
                     </ul>
                 </li>

@@ -223,13 +223,13 @@
             <ul id="dc_accordion" class="sidebar-menu tree">
 
                 <li class="menu_sub">
-                    <a href="/table-record-deal.html">
+                    <a href="/WEB-INF/pages/table-record-deal.html">
                         <i class="fa fa-file text-aqua"></i> <span>报修受理</span>
                     </a>
                 </li>
 
                 <li class="menu_sub">
-                    <a href="/table-record-manage.html">
+                    <a href="/WEB-INF/pages/table-record-manage.html">
                         <i class="fa fa-file text-aqua"></i> <span>报修管理 </span>
                     </a>
                 </li>

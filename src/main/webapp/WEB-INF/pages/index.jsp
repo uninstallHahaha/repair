@@ -1,11 +1,18 @@
-﻿<!DOCTYPE html>
+﻿<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>报修记录 - 已完成记录</title>
+		<title>首页</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<!-- google font -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
@@ -14,9 +21,9 @@
 		<link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-
-		<!--bs4 data table-->
-		<link href="assets/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+		<link href="assets/css/weather-icons.min.css" rel="stylesheet">
+		<!--Morris Chart -->
+		<link rel="stylesheet" href="assets/js/index/morris-chart/morris.css">
 		<link href="assets/css/style.css" rel="stylesheet">
 		<link href="assets/css/responsive.css" rel="stylesheet">
 	</head>
@@ -170,131 +177,183 @@
 					<ul id="dc_accordion" class="sidebar-menu tree">
 
 						<li class="menu_sub">
-							<a href="./index.html"> <i class="fa fa-file text-aqua"></i> <span>首页</span>
-
+							<a href="/index">
+								<i class="icon-grid text-aqua"></i> <span>首页</span>
 							</a>
 						</li>
 
 						<li class="menu_sub">
-							<a href="./form-request.html"> <i class="fa fa-file text-aqua"></i> <span>报修申请</span>
-
+							<a href="/getformpage">
+								<i class="fa fa fa-newspaper-o text-aqua"></i> <span>报修申请</span>
 							</a>
 						</li>
 
 						<li class="menu_sub dcjq-parent-li">
 							<a href="#" class="dcjq-parent">
-								<i class="fa fa-file text-aqua"></i>
+								<i class="fa fa fa-calendar text-aqua"></i>
 								<span>报修记录</span>
 								<span class="arrow"></span>
 							</a>
 							<ul class="down_menu" style="display: block;">
 								<li>
-									<a href="/table-record-doing.html">正在进行的订单</a>
+									<a href="/getRecordDoingPage">正在进行的订单</a>
 								</li>
 								<li>
-									<a href="/table-record-done.html">已完成订单</a>
+									<a href="/getRecordDonePage">已完成订单</a>
 								</li>
 							</ul>
 						</li>
 
 						<li class="menu_sub">
-							<a href="#"> <i class="fa fa-file text-aqua"></i> <span>报修查询</span>
-
+							<a href="/getSearchPage/alice">
+								<i class="fa fa-search text-aqua"></i> <span>报修查询</span>
 							</a>
 						</li>
 
 						<li class="menu_sub">
-							<a href="./profile.html"> <i class="fa fa-file text-aqua"></i> <span>个人中心</span>
-
+							<a href="/profilepage">
+								<i class="fa fa fa-home text-aqua"></i> <span>个人中心</span>
 							</a>
 						</li>
-
-
 					</ul>
 				</div>
 
-				<!--main contents start-->
-				<main class="content_wrapper">
-					<!--page title start-->
-					<div class="page-heading">
-						<div class="container-fluid">
+				<div class="content_wrapper" style="min-height: inherit;">
+					<div class="container-fluid">
+						<!-- breadcrumb -->
+						<div class="page-heading">
 							<div class="row d-flex align-items-center">
 								<div class="col-md-6">
 									<div class="page-breadcrumb">
-										<h1>报修记录</h1>
+										<h1>首页</h1>
 									</div>
 								</div>
-								<div class="col-md-6 justify-content-md-end d-flex">
+								<div class="col-md-6 justify-content-md-end d-md-flex">
 									<div class="breadcrumb_nav">
 										<ol class="breadcrumb">
 											<li>
 												<i class="fa fa-home"></i>
-												<a class="parent-item" href="index.html">主页</a>
+												<a class="parent-item" href="#">首页</a>
 												<i class="fa fa-angle-right"></i>
-											</li>
-											<li class="active">
-												报修记录
 											</li>
 										</ol>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!--page title end-->
-					<div class="container-fluid">
-						<!-- state start-->
-						<div class="row">
-							<div class=" col-sm-12">
-								<div class="card card-shadow mb-4">
-									<div class="card-header">
-										<div class="card-title">
-											我的报修记录
+						<!-- breadcrumb_End -->
+
+						<!-- Section -->
+						<section class="chart_section">
+                            
+                            <div class="row">
+                                <div class="col-xl-12 col-sm-12 mb-12" style="margin-bottom: 24px;">
+                                    <div class="card border-0 text-light">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12" style="display: flex;justify-content: center;">
+                                                    <img src="/images/liucheng.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+							<div class="row">
+								<div class="col-xl-3 col-sm-6 mb-4">
+									<div class="card border-0 text-light">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-12">
+													<div class="homepage_single">
+														<span class="sec_icon"><i class="fa fa-wpforms" aria-hidden="true"></i></span>
+														<div class="homepage_fl_right">
+															<h4 class="mt-0">已提交的申请</h4>
+															<h3><span class="single-count">305</span></h3>
+														</div>
+														<p>
+															提交的申请总数
+														</p>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="card-body">
+								</div>
 
-										<!--  bootstrap table  -->
-										<div id="toolbar">
-											<button id="remove" class="btn btn-danger" disabled>
-												<i class="glyphicon glyphicon-remove"></i> 删除
-											</button>
+								<div class="col-xl-3 col-sm-6 mb-4">
+									<div class="card border-0 text-light">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-12">
+													<div class="homepage_single">
+														<span class="sec_icon"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+														<div class="homepage_fl_right">
+															<h4 class="mt-0">已受理的申请</h4>
+															<h3><span class="single-count">843</span></h3>
+														</div>
+														<p>
+                                                            已经指派给维修人员
+														</p>
+													</div>
+												</div>
+											</div>
 										</div>
-										<table
-												id="table"
-												data-toolbar="#toolbar"
-												data-search="true"
-												data-show-refresh="true"
-												data-show-toggle="false"
-												data-show-fullscreen="true"
-												data-show-columns="true"
-												data-show-columns-toggle-all="true"
-												data-detail-view="false"
-												data-show-export="true"
-												data-click-to-select="true"
-												data-detail-formatter="detailFormatter"
-												data-minimum-count-columns="2"
-												data-show-pagination-switch="false"
-												data-pagination="true"
-												data-id-field="id"
-												data-page-list="[10, 25, 50, 100, all]"
-												data-show-footer="false"
-												data-side-pagination="client"
-												data-url="/obtainRecordsDoneByUserId"
-												data-response-handler="responseHandler">
-										</table>
-										<!-- End bootstrap table  -->
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-sm-6 mb-4">
+									<div class="card border-0 text-light">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-12">
+													<div class="homepage_single">
+														<span class="sec_icon"><i class="fa fa-check" aria-hidden="true"></i></span>
+														<div class="homepage_fl_right">
+															<h4 class="mt-0">已确认的申请</h4>
+															<h3><span class="single-count">1228</span></h3>
+														</div>
+														<p>
+															维修人员已确认任务
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-xl-3 col-sm-6 mb-4">
+									<div class="card border-0 text-light">
+										<div class="card-body">
+											<div class="row">
+												<div class="col-12">
+													<div class="homepage_single">
+														<span class="sec_icon"><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+														<div class="homepage_fl_right">
+															<h4 class="mt-0">已完成的申请</h4>
+															<h3><span class="single-count">+1234K</span></h3>
+														</div>
+														<p>
+															维修人员已完成维修
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<!-- state end-->
+                            
+
+
+						</section>
+						<!-- Section_End -->
+
 					</div>
-
-				</main>
-				<!--main contents end-->
+				</div>
 			</div>
-
 			<!-- Content_right_End -->
 			<!-- Footer -->
 			<footer class="footer ptb-20">
@@ -302,8 +361,8 @@
 					<div class="col-md-12 text-center">
 						<div class="copy_right">
 							<p>
-								2018 © Dashboard Theme By
-								<a href="http://www.bootstrapmb.com/">Poliset</a>
+								2020 © Designed By
+								<a href="http://www.bootstrapmb.com/">Aclic</a>
 							</p>
 						</div>
 						<a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>
@@ -316,47 +375,30 @@
 		<script type="text/javascript" src="assets/js/popper.min.js"></script>
 		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-		<!--datatables-->
-		<script src="assets/js/jquery.dataTables.min.js"></script>
-		<script src="assets/js/dataTables.bootstrap4.min.js"></script>
+		<!--vectormap-->
+		<script src="assets/js/index/jquery-jvectormap-1.2.2.min.js"></script>
+		<script src="assets/js/index/jquery-jvectormap-world-mill-en.js"></script>
+		<script src="assets/js/index/vmap-init.js"></script>
+		
+		<!--echarts-->
+		<script type="text/javascript" src="assets/js/index/echarts-all-3.js"></script>
+		<!--init echarts-->
+		<script type="text/javascript" src="assets/js/index/init-echarts.js"></script>
+
+		<!-- chart js -->
+		<script src="assets/js/index/Chart.bundle.js"></script>
+		<script src="assets/js/index/utils.js"></script>
+
+		<script src="assets/js/index/chart.js"></script>
+
 		<script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
 		<script src="assets/js/custom.js" type="text/javascript"></script>
-		<script>
-			$(document).ready(function() {
-				var table = $('#show-hide').DataTable({
-					"scrollY" : "400px",
-					"paging" : false
-				});
-				$('a.toggle-vis').on('click', function(e) {
-					e.preventDefault();
-					// Get the column API object
-					var column = table.column($(this).attr('data-column'));
-					// Toggle the visibility
-					column.visible(!column.visible());
-				});
-			});
-		</script>
+
+<!-- x -->
+
+<link rel="stylesheet" href="xgather/xcss/index.css">
 
 
-		<style type="text/css">
-			td{
-				white-space:nowrap;
-				overflow:hidden;
-				word-break:keep-all;
-			}
-		</style>
-
-
-		<!--	x-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.16.0/bootstrap-table.min.css"/>
-		<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
-		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table-locale-all.min.js"></script>
-		<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
-
-		<link rel="stylesheet" href="/xgather/xcss/scroll.css">
-		<script src="/xgather/xlib/layer/layer.js"></script>
-		<script src="/xgather/xjs/table-record-done.js"></script>
 	</body>
 
 </html>

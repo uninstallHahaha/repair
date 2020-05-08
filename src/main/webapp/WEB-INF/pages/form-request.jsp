@@ -1,24 +1,31 @@
-﻿<!DOCTYPE html>
+﻿
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Form Wizard</title>
+    <title>提交申请</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css"/>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/ionicons.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/ionicons.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="../../assets/css/animate.min.css" rel="stylesheet">
     <!--jqery steps-->
-    <link href="assets/css/jquery.steps.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="../../assets/css/jquery.steps.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,8 +34,8 @@
     <header class="main-header">
         <div class="container_header">
             <div class="logo d-flex align-items-center">
-                <a href="#"> <strong class="logo_icon"> <img src="assets/images/small-logo.png" alt=""> </strong> <span
-                        class="logo-default"> <img src="assets/images/logo2.png" alt=""> </span> </a>
+                <a href="#"> <strong class="logo_icon"> <img src="../../assets/images/small-logo.png" alt=""> </strong> <span
+                        class="logo-default"> <img src="../../assets/images/logo2.png" alt=""> </span> </a>
                 <div class="icon_menu full_menu">
                     <a href="#" class="menu-toggler sidebar-toggler"></a>
                 </div>
@@ -122,7 +129,7 @@
                                     <li>
                                         <ul class="dropdown-menu-list">
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="../../assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -130,7 +137,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="../../assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -138,7 +145,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="../../assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -146,7 +153,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="../../assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -154,7 +161,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="../../assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -162,7 +169,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#"> <span class="photo"> <img src="assets/images/about-1.jpg"
+                                                <a href="#"> <span class="photo"> <img src="../../assets/images/about-1.jpg"
                                                                                        class="img-circle"
                                                                                        alt=""> </span> <span
                                                         class="subject"> <span class="from"> Sarah Smith </span> <span
@@ -178,7 +185,7 @@
                             <div class="dropdown dropdown-user">
                                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"
                                    data-hover="dropdown" data-close-others="true" aria-expanded="true"> <img
-                                        class="img-circle pro_pic" src="assets/images/about-1.jpg" alt=""> </a>
+                                        class="img-circle pro_pic" src="../../assets/images/about-1.jpg" alt=""> </a>
                                 <ul class="dropdown-menu dropdown-menu-default">
                                     <li>
                                         <a href="#"> <i class="icon-user"></i> Profile </a>
@@ -213,7 +220,7 @@
         <div class="side_bar scroll_auto">
             <div class="user-panel">
                 <div class="user_image">
-                    <img src="assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
+                    <img src="../../assets/images/about-1.jpg" class="img-circle mCS_img_loaded" alt="User Image">
                 </div>
                 <div class="info">
                     <p>
@@ -226,7 +233,7 @@
             <ul id="dc_accordion" class="sidebar-menu tree">
 
                 <li class="menu_sub">
-                    <a href="./index.html"> <i class="fa fa-file text-aqua"></i> <span>首页</span>
+                    <a href="../../index.html"> <i class="fa fa-file text-aqua"></i> <span>首页</span>
 
                     </a>
                 </li>
@@ -245,10 +252,10 @@
                     </a>
                     <ul class="down_menu" style="display: block;">
                         <li>
-                            <a href="/table-record-doing.html">正在进行的订单</a>
+                            <a href="/WEB-INF/pages/table-record-doing.html">正在进行的订单</a>
                         </li>
                         <li>
-                            <a href="/table-record-done.html">已完成订单</a>
+                            <a href="/WEB-INF/pages/table-record-done.html">已完成订单</a>
                         </li>
                     </ul>
                 </li>
@@ -285,7 +292,7 @@
                                 <ol class="breadcrumb">
                                     <li>
                                         <i class="fa fa-home"></i>
-                                        <a class="parent-item" href="index.html">首页</a>
+                                        <a class="parent-item" href="../../index.html">首页</a>
                                         <i class="fa fa-angle-right"></i>
                                     </li>
                                     <li class="active">
@@ -456,20 +463,20 @@
     </footer>
     <!-- Footer_End -->
 </div>
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="assets/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../assets/js/popper.min.js"></script>
+<script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.validate.js"></script>
 <!--form basic wizard init-->
-<script src="assets/js/form-wizard-init.js"></script>
+<script src="../../assets/js/form-wizard-init.js"></script>
 <!--jquery steps-->
-<script src="assets/js/jquery.steps.min.js"></script>
+<script src="../../assets/js/jquery.steps.min.js"></script>
 <!--jquery stepy-->
-<script src="assets/js/jquery.stepy.js"></script>
-<script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="assets/js/custom.js" type="text/javascript"></script>
+<script src="../../assets/js/jquery.stepy.js"></script>
+<script type="text/javascript" src="../../assets/js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="../../assets/js/custom.js" type="text/javascript"></script>
 
 <script>
     //stepy tab wizard
@@ -522,11 +529,11 @@
     });
 </script>
 
-<script src="xgather/xlib/laydate/laydate.js"></script>
+<script src="../../xgather/xlib/laydate/laydate.js"></script>
 
-<link rel="stylesheet" href="xgather/xlib/dropify/dropify.css">
-<script src="xgather/xlib/dropify/dropify.js"></script>
-<script src="xgather/xjs/form-request.js"></script>
+<link rel="stylesheet" href="../../xgather/xlib/dropify/dropify.css">
+<script src="../../xgather/xlib/dropify/dropify.js"></script>
+<script src="../../xgather/xjs/form-request.js"></script>
 
 </body>
 

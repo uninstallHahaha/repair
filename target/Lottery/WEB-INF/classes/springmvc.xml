@@ -38,6 +38,10 @@
         <mvc:interceptor>
             <!--配置要拦截的路径-->
             <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/signin"/>
+            <mvc:exclude-mapping path="/signup"/>
+            <mvc:exclude-mapping path="/gettopaypage/**"/>
+            <mvc:exclude-mapping path="/checkpay"/>
             <!--配置用哪个拦截器拦截-->
             <bean class="com.aclic.lottery.Utils.LoginInterceptor"/>
         </mvc:interceptor>

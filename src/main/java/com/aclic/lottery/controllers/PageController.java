@@ -139,7 +139,7 @@ public class PageController {
 
     @RequestMapping("/adminindex")
     public String getadminindex() {//✔
-        return "redirect:/table-record-deal.html";
+        return "table-record-deal";
     }
 
     @RequestMapping("/userlistpage")
@@ -178,8 +178,22 @@ public class PageController {
     }
 
 
+    //用户
+    @RequestMapping("/index")
+    public String getUserMain() {
+        return "index";
+    }
     @RequestMapping("/getformpage")
     public String getformpage() {
         return "form-request";
     }
+    @RequestMapping("/getRecordDoingPage")
+    public String getRecordDoingPage() {
+        return "table-record-doing";
+    }
+    @RequestMapping("/getRecordDonePage")
+    public String getRecordDonePage() {
+        return "table-record-done";
+    }
+
 }
