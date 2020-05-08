@@ -136,10 +136,15 @@ public class PageController {
         return "emailPage";
     }
 
-
+    //管理员
     @RequestMapping("/adminindex")
     public String getadminindex() {//✔
         return "table-record-deal";
+    }
+
+    @RequestMapping("/admin_manage")
+    public String admin_manage() {//✔
+        return "table-record-manage";
     }
 
     @RequestMapping("/userlistpage")
@@ -180,26 +185,29 @@ public class PageController {
 
     //用户
     @RequestMapping("/index")
-    public String getUserMain(HttpSession session,Model model) {
-        User user = (User)session.getAttribute("USER");
+    public String getUserMain(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("USER");
         List<Record> allByUserid = recordService.findAllByUserid(user.getId());
         List<Record> allDealedByUserId = recordService.findAllDealedByUserId(user.getId());
         List<Record> allTodoByUserId = recordService.findAllTodoByUserId(user.getId());
         List<Record> allFinishByUserId = recordService.findAllFinishByUserId(user.getId());
-        model.addAttribute("all",allByUserid.size());
-        model.addAttribute("dealed",allDealedByUserId.size());
-        model.addAttribute("todo",allTodoByUserId.size());
-        model.addAttribute("finish",allFinishByUserId.size());
+        model.addAttribute("all", allByUserid.size());
+        model.addAttribute("dealed", allDealedByUserId.size());
+        model.addAttribute("todo", allTodoByUserId.size());
+        model.addAttribute("finish", allFinishByUserId.size());
         return "index";
     }
+
     @RequestMapping("/getformpage")
     public String getformpage() {
         return "form-request";
     }
+
     @RequestMapping("/getRecordDoingPage")
     public String getRecordDoingPage() {
         return "table-record-doing";
     }
+
     @RequestMapping("/getRecordDonePage")
     public String getRecordDonePage() {
         return "table-record-done";

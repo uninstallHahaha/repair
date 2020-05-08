@@ -177,25 +177,25 @@
 					<ul id="dc_accordion" class="sidebar-menu tree">
 
 						<li class="menu_sub">
-							<a href="/WEB-INF/pages/table-record-deal.html">
-								<i class="fa fa-file text-aqua"></i> <span>报修受理</span>
+							<a href="/adminindex">
+								<i class="fa fa fa-wpforms text-aqua"></i> <span>报修受理</span>
 							</a>
 						</li>
 
 						<li class="menu_sub">
-							<a href="/WEB-INF/pages/table-record-manage.html">
-								<i class="fa fa-file text-aqua"></i> <span>报修管理 </span>
+							<a href="/admin_manage">
+								<i class="fa fa fa-file-text-o text-aqua"></i> <span>报修管理 </span>
 							</a>
 						</li>
 						<li class="menu_sub">
 							<a href="/userlistpage">
-								<i class="fa fa-file text-aqua"></i> <span>用户管理</span>
+								<i class="fa fa fa-user-circle-o text-aqua"></i> <span>用户管理</span>
 							</a>
 						</li>
 
 						<li class="menu_sub">
 							<a href="/workerlistpage">
-								<i class="fa fa-file text-aqua"></i> <span>维修人员管理 </span>
+								<i class="fa fa fa-user-md text-aqua"></i> <span>维修人员管理 </span>
 							</a>
 						</li>
 
