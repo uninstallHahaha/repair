@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +59,7 @@
                             <input type="checkbox" name="rememberMe" id="rememberMe"> 记住密码
                         </label>
                         <label class="pull-right">
-                            <a href="#">忘记密码?</a>
+                            <a href="#" onclick="showPassModal()">忘记密码?</a>
                         </label>
                     </div>
                 </form>
@@ -84,5 +82,75 @@
 <script src="/xgather/xlib/layer/layer.js"></script>
 <script src="/xgather/xjs/login.js"></script>
 </body>
+
+<style type="text/css">
+    #passModal{
+        display: flex;
+        padding: 24px;
+    }
+    .cbtn{
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+    .layui-layer-btn0{
+        color: #fff !important;
+    }
+</style>
+
+<div id="passModal" style="display: none;">
+    <input type="text" placeholder="输入用户名" id="nameholder">
+    <input type="text" style="display: none;" id="emailconer">
+    <button class="btn btn-pill btn-primary cbtn" onclick="getEmail()">确认</button>
+</div>
+
+
+<script>
+    function getEmail() {
+        var username = $('#nameholder').val()
+        if (username == null || username== "") {
+            layer.msg('请输入用户名')
+            return
+        }
+        $.ajax({
+            url: '/getUserEmail',
+            method: 'post',
+            data: {name: username},
+            success: function (res) {
+                if (res.stat == 1) {
+                    $('#emailconer').val(res.data)
+                    layer.confirm('您的邮箱是' + $("#emailconer").val() + '吗?', function () {
+                        var indexload = layer.load(2);
+                        //发送邮件
+                        $.ajax({
+                            url: '/sendForget',
+                            data: {acc: $('#nameholder').val()},
+                            method: 'post',
+                            success: function (res) {
+                                layer.close(indexload);
+                                if (res.stat == 1) {
+                                    layer.msg('我们已经向您的邮箱发送了重置密码的邮件,请注意查收')
+                                } else {
+                                    layer.msg(res.data)
+                                }
+                            }
+                        })
+
+                    })
+                }
+            }
+        })
+    }
+
+    function showPassModal() {
+        layer.open({
+            title: '密码找回',
+            type: 1,
+            closeBtn: 1,
+            anim: 2,
+            shadeClose: false,
+            content: $('#passModal')
+        });
+    }
+</script>
 
 </html>

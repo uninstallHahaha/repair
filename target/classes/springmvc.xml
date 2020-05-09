@@ -41,6 +41,8 @@
             <mvc:exclude-mapping path="/signin"/>
             <mvc:exclude-mapping path="/signin_admin"/>
             <mvc:exclude-mapping path="/signin_worker"/>
+            <mvc:exclude-mapping path="/getUserEmail"/>
+            <mvc:exclude-mapping path="/sendForget"/>
             <mvc:exclude-mapping path="/signup"/>
             <mvc:exclude-mapping path="/gettopaypage/**"/>
             <mvc:exclude-mapping path="/checkpay"/>

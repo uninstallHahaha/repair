@@ -5,7 +5,6 @@ import com.aclic.lottery.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -126,6 +125,17 @@ public class UserController {
     @RequestMapping("/delUser")
     public int delUser(String id, HttpSession session) {//✔
         return userService.delUser(id);
+    }
+
+
+    @ResponseBody
+    @RequestMapping("/getUserEmail")
+    public Map<String, Object> getUserEmail(String name, HttpSession session) {//✔
+        Map<String, Object> map = new HashMap<String, Object>();
+        String email = userService.findOneByName(name).getEmail();
+        map.put("stat", 1);
+        map.put("data", email);
+        return map;
     }
 
 }
