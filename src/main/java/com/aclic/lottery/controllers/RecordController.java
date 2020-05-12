@@ -149,6 +149,7 @@ public class RecordController {
         } else {
             model.addAttribute("payres", "未在规定时间内支付, 订单已逾期");
         }
+        model.addAttribute("payid", rid);
         return "pay_result";
     }
 

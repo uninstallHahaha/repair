@@ -315,6 +315,10 @@
                                                         <td>预约时间</td>
                                                         <td>${comment.rtime}</td>
                                                     </tr>
+                                                    <tr>
+                                                        <td>报修状态</td>
+                                                        <td>${comment.state == 1? '已提交':(comment.state == 2?'已指派':(comment.state == 3?'已确认':'已完成'))}</td>
+                                                    </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -408,7 +412,6 @@
                                                 <thead>
                                                 <tr class="thead-default">
                                                     <th>问题详情</th>
-
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -416,9 +419,23 @@
                                                     <td>
                                                         ${comment.detail}
                                                     </td>
-
                                                 </tr>
-
+                                                </tbody>
+                                            </table>
+                                            <table class="table  invoice-detail-table">
+                                                <thead>
+                                                <tr class="thead-default">
+                                                    <th>现场图片</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <c:if test="${comment!=null}">
+                                                            <img src="/uploads/record/${comment.pic}">
+                                                        </c:if>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -440,7 +457,7 @@
                 <div class="copy_right">
                     <p>
                         2020 © Designed By
-                        <a href="http://www.aclic.com/">Aclic</a>
+                        <a href="http://www.Hu.com/">Hu</a>
                     </p>
                 </div>
                 <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

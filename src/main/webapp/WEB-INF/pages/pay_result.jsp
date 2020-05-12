@@ -307,6 +307,8 @@
                             </div>
                             <div class="card-body card_chart">
                                 <h2> ${payres}</h2>
+
+                                <h2> 您的订单编号是: ${payid} , 使用该编号可在订单查询功能中进行查询 </h2>
                                 <a href="#">返回首页</a>
                                 <a href="#">报修记录</a>
                                 <p>
@@ -331,7 +333,7 @@
             <div class="copy_right">
                 <p>
                     2020 © Designed By
-                    <a href="http://www.aclic.com/">Aclic</a>
+                    <a href="http://www.Hu.com/">Hu</a>
                 </p>
             </div>
             <a id="back-to-top" href="#"> <i class="ion-android-arrow-up"></i> </a>

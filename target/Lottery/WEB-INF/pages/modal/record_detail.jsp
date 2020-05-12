@@ -178,7 +178,7 @@
 
 <hr>
 
-<img src="/uploads/record/${record.pic}" width="100%" alt="图片">
+<%--<img src="/uploads/record/${record.pic}" width="100%" alt="图片">--%>
 </body>
 
 <link rel="stylesheet" href="/xgather/xcss/scroll.css">
